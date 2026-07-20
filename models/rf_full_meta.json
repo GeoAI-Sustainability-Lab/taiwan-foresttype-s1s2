@@ -1,0 +1,51 @@
+{
+  "features": [
+    "NBR_amp",
+    "NBR_mean",
+    "NBR_pha",
+    "NDMI_amp",
+    "NDMI_mean",
+    "NDMI_pha",
+    "NDVI_amp",
+    "NDVI_mean",
+    "NDVI_pha",
+    "RATIO_mean",
+    "RATIO_std",
+    "RATIO_wetdry",
+    "RVI_mean",
+    "VH_amp",
+    "VH_mean",
+    "VH_pha",
+    "VH_wetdry",
+    "VV_mean",
+    "VV_wetdry",
+    "aspect_cos",
+    "dewdep",
+    "dewp_mean",
+    "elev",
+    "precip_dry",
+    "precip_mm",
+    "precip_wet",
+    "reNDVI_amp",
+    "reNDVI_mean",
+    "reNDVI_pha",
+    "slope",
+    "soilm_dry",
+    "soilm_mean",
+    "soilm_wet",
+    "soilm_wetdry",
+    "temp_mean"
+  ],
+  "classes": {
+    "1": "Broadleaf",
+    "2": "Conifer",
+    "3": "Bamboo"
+  },
+  "rf_params": {
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "class_weight": "balanced",
+    "random_state": 0
+  },
+  "trained_on": "all 755 samples (5-year features)"
+}

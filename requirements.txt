@@ -1,0 +1,11 @@
+joblib
+numpy
+pandas
+scikit-learn
+xgboost
+shap
+matplotlib
+geopandas
+rasterio
+pyproj
+scipy

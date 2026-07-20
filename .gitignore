@@ -4,15 +4,5 @@ __pycache__/
 *.gpkg-journal
 上傳步驟.md
 
-# stale figures from earlier drafts (not in the manuscript)
-figures/Fig10_error_cause.png
-figures/Fig11_tsne.png
-figures/Fig12_uncertainty.png
-figures/Fig13_map_comparison.png
-figures/Fig14_regional.png
-figures/Fig5_shap_global.png
-figures/Fig6_perclass_shap.png
-figures/Fig7_ALE.png
-figures/Fig8_transfer_global.png
-figures/Fig9_error_analysis.png
-figures/Fig_timeline.png
+# scratch file left by a tooling probe; delete it if you can
+data/_probe

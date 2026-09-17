@@ -1,9 +1,8 @@
 """
-train_eval.py — reproduce Table 1 and the headline accuracies of the manuscript
-"Classification of Broadleaf, Conifer and Bamboo Forests Across Taiwan by
- Multi-Source Remote Sensing and Interpretable Machine Learning" (revised version, 34 features).
+train_eval.py — accuracy of every feature set under spatial-block cross-validation and on an independent year
+(broadleaf, conifer and bamboo forest types across Taiwan, 34 features).
 
-Protocol (Section II-D of the manuscript)
+Protocol
   * 755 reference points (243 broadleaf, 260 conifer, 252 bamboo), 34 features
     (12 optical phenology, 9 SAR, 13 climate + terrain), see data/DATA_DICTIONARY.md.
   * Spatial blocks: graticule cells of 0.1 deg longitude x 0.09 deg latitude
@@ -16,8 +15,8 @@ Protocol (Section II-D of the manuscript)
                     (features_test1yr_2025-2026.csv) — held out in space and in time.
   * 95% intervals : block bootstrap (spatial blocks resampled with replacement, 20,000 draws).
 
-Running as a script prints Table 1 (overall accuracy, kappa, macro-F1, per-class recall
-and F1 for every feature set), writes results/table1.json, and trains the final model on
+Running as a script prints the accuracy table (overall accuracy, kappa, macro-F1, per-class recall
+and F1 for every feature set), writes results/accuracy_by_feature_set.json, and trains the final model on
 all 755 points (34 features) -> models/rf_full.joblib + models/rf_full_meta.json.
 
 Run:  python src/train_eval.py
@@ -102,13 +101,13 @@ SETS = [("Full (34)", FEATS),
 if __name__ == "__main__":
     os.makedirs(MODELS, exist_ok=True); os.makedirs(RESULTS, exist_ok=True)
     print(f"scikit-learn {sklearn.__version__}, numpy {np.__version__}; n={len(y)}, features={len(FEATS)}, blocks={_NB}\n")
-    print("Table 1 - classification performance of each feature set (34-feature revision)")
+    print("Classification performance of each feature set (34 features)")
     print("  Same window: out-of-fold within 2021-2024; Next year: same held-out blocks on 2025-06..2026-05")
     hdr = (f"  {'Feature set (dim.)':<28}{'SW OA':>7}{'SW k':>7}{'NY OA':>8}{'NY k':>7}{'mF1':>7}"
            f"{'R Bl':>6}{'R Co':>6}{'R Ba':>6}{'F1 Bl':>7}{'F1 Co':>7}{'F1 Ba':>7}")
     print(hdr); print("  " + "-" * (len(hdr) - 2))
     out = {"protocol": "GroupKFold(5) on 0.1x0.09 deg graticule blocks; RF 300 trees, min_samples_leaf 3, balanced, seed 0",
-           "versions": {"sklearn": sklearn.__version__, "numpy": np.__version__, "pandas": pd.__version__}, "table1": {}}
+           "versions": {"sklearn": sklearn.__version__, "numpy": np.__version__, "pandas": pd.__version__}, "accuracy_by_feature_set": {}}
     c_full = None
     for tag, cols in SETS:
         p1 = samewindow_cv(cols); p2 = independent_cv(cols)
@@ -116,15 +115,15 @@ if __name__ == "__main__":
         m2["CI_block_OA"] = block_bootstrap_ci((p2 == y).astype(float))
         if tag == "Full (34)": c_full = (p2 == y)
         else: m2["delta_OA_vs_full_CI_block"] = block_bootstrap_ci((p2 == y).astype(float) - c_full.astype(float))
-        out["table1"][tag] = dict(same_window=m1, next_year=m2)
+        out["accuracy_by_feature_set"][tag] = dict(same_window=m1, next_year=m2)
         print(f"  {tag:<28}{m1['OA']:7.3f}{m1['kappa']:7.3f}{m2['OA']:8.3f}{m2['kappa']:7.3f}{m2['macroF1']:7.3f}"
               f"{m2['recall'][0]:6.2f}{m2['recall'][1]:6.2f}{m2['recall'][2]:6.2f}"
               f"{m2['F1'][0]:7.3f}{m2['F1'][1]:7.3f}{m2['F1'][2]:7.3f}")
-    full = out["table1"]["Full (34)"]["next_year"]
+    full = out["accuracy_by_feature_set"]["Full (34)"]["next_year"]
     print(f"\n  Full model, next year: OA {full['OA']} (95% block interval {full['CI_block_OA']}), "
           f"kappa {full['kappa']}, macro-F1 {full['macroF1']}, confusion matrix {full['confusion_matrix']}")
-    json.dump(out, open(os.path.join(RESULTS, "table1.json"), "w"), indent=1)
-    print("  -> results/table1.json")
+    json.dump(out, open(os.path.join(RESULTS, "accuracy_by_feature_set.json"), "w"), indent=1)
+    print("  -> results/accuracy_by_feature_set.json")
 
     final = RandomForestClassifier(**RF).fit(X, y)
     joblib.dump(final, os.path.join(MODELS, "rf_full.joblib"))

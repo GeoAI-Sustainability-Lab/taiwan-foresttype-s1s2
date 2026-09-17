@@ -2,7 +2,7 @@
 """canonical_v2_E_periodicity.py — period-two test of the annual Landsat NDVI series (2005-2020) at the reference points.
 Per point: linearly detrended residuals r_t; statistic S2 = share of periodogram power at period two (Nyquist) = (sum r_t (-1)^t)^2 / (n sum r_t^2);
 null: an AR(1) fitted to the residuals of that point (first-order autocorrelation preserved), 999 simulated series of the same length,
-p = P(S2_null >= S2_obs). Class-mean series tested the same way. Output: results/R1/canonical_v2_E_periodicity.json."""
+p = P(S2_null >= S2_obs). Class-mean series tested the same way. Output: results/analyses/canonical_v2_E_periodicity.json."""
 import numpy as np, pandas as pd, json, os
 HERE=os.path.dirname(os.path.abspath(__file__))
 df=pd.read_csv(os.path.join(DATA,"landsat_annual_NDVI.csv"))

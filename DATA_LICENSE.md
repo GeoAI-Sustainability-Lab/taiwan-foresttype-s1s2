@@ -12,7 +12,7 @@ carry the same attributions forward.
 ### Forest-type reference labels
 
 Applies to the `cls` column of `features_train4yr.csv`, `features_test1yr_2025-2026.csv`, `folds.csv`
-and the tables under `data/R1/` and `data/archive_v1_submission/`, and to `train_points.csv`
+and the tables under `data/analyses/` and `data/archive_v1_35features/`, and to `train_points.csv`
 (point coordinates and class).
 
 **第四次森林資源調查全島森林林型分布圖** (Fourth National Forest Resource Inventory, island-wide

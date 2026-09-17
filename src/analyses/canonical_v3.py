@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""canonical_v3.py — canonical recomputation with the 34-feature set (revision R1)
+"""canonical_v3.py — canonical evaluation with the 34-feature set
 Protocol: GroupKFold(5) on blk (0.1 deg x 0.09 deg graticule cells, 204 cells), RF(300, leaf 3, balanced, seed 0)
   same-window : fit train4yr[a] -> predict train4yr[b]
   independent : fit train4yr[a] -> predict test1yr[b]
-Outputs results/R1/canonical_v3.json (all numbers) and preds_v3.npz (per-point predictions and probabilities for the later statistics).
-Section 0 reproduces the submitted-version numbers from data/archive_v1_submission (35 features) for the record.
+Outputs results/analyses/canonical_v3.json (all numbers) and preds_v3.npz (per-point predictions and probabilities for the later statistics).
+Section 0 reproduces the numbers of the earlier 35-feature tables (data/archive_v1_35features) for the record.
 """
 import numpy as np, pandas as pd, json, os, sys, warnings, hashlib, platform, sklearn, scipy
 warnings.filterwarnings("ignore")
@@ -15,11 +15,11 @@ from sklearn.metrics import (accuracy_score, cohen_kappa_score, confusion_matrix
 from scipy.stats import binomtest, chi2 as chi2d
 
 HERE=os.path.dirname(os.path.abspath(__file__)); REPO=os.path.dirname(os.path.dirname(HERE))
-DATA=os.path.join(REPO,"data","R1"); OUT=os.path.join(REPO,"results","R1"); ARCH=os.path.join(REPO,"data","archive_v1_submission"); os.makedirs(OUT,exist_ok=True)
+DATA=os.path.join(REPO,"data","analyses"); OUT=os.path.join(REPO,"results","analyses"); ARCH=os.path.join(REPO,"data","archive_v1_35features"); os.makedirs(OUT,exist_ok=True)
 tr0=pd.read_csv(os.path.join(ARCH,"features_train4yr.csv")); te0=pd.read_csv(os.path.join(ARCH,"features_test1yr_2025-2026.csv"))
 tr=pd.read_csv(os.path.join(DATA,"features_train4yr_v2.csv")); te=pd.read_csv(os.path.join(DATA,"features_test1yr_2025-2026_v2.csv"))
 F35=[c for c in tr0.columns if c not in ("cls","lon","lat","blk")]
-DROP=["RVI_mean"]   # the revised tables carry 34 features (radar vegetation index withdrawn; aspect_cos = cos(aspect in radians))
+DROP=["RVI_mean"]   # the tables carry 34 features (radar vegetation index withdrawn; aspect_cos = cos(aspect in radians))
 F34=[c for c in tr.columns if c not in ("cls","lon","lat","blk")+tuple(DROP)]
 y=tr.cls.values.astype(int); blk=tr.blk.astype(str).values
 RF=dict(n_estimators=300,min_samples_leaf=3,class_weight="balanced",random_state=0,n_jobs=-1)
@@ -65,7 +65,7 @@ def paired(cA,cB):
     d=mcnemar(cA,cB); d["delta_OA"]=round(float(cA.mean()-cB.mean()),4); d["delta_block_CI"]=boot_block_stat(cA.astype(float)-cB.astype(float)); return d
 
 out={"meta":dict(features=F34,dropped=DROP,n=int(len(y)),class_counts=[int((y==k).sum()) for k in (1,2,3)],
-     blocks=int(NB),note="revision R1: 34 features (radar vegetation index withdrawn; aspect_cos = cos of aspect in radians, sampled in GEE at 10 m)",
+     blocks=int(NB),note="34 features (radar vegetation index withdrawn; aspect_cos = cos of aspect in radians, sampled in GEE at 10 m)",
      block_def="blk = floor(lon/0.1)_floor(lat/0.09); 0.1 deg x 0.09 deg graticule cells (~10.2 km x 9.95 km at 23.5N)",
      folds="GroupKFold(5) deterministic; fold_id saved in preds_v3.npz",
      versions=dict(python=platform.python_version(),sklearn=sklearn.__version__,numpy=np.__version__,scipy=scipy.__version__,pandas=pd.__version__),
@@ -73,7 +73,7 @@ out={"meta":dict(features=F34,dropped=DROP,n=int(len(y)),class_counts=[int((y==k
      sha256=dict(train=hashlib.sha256(open(os.path.join(ARCH,"features_train4yr.csv"),"rb").read()).hexdigest(),
                  test=hashlib.sha256(open(os.path.join(ARCH,"features_test1yr_2025-2026.csv"),"rb").read()).hexdigest()))}
 
-# ---------- 0. reproduce 35 (archived) ----------
+# ---------- 0. reproduce the earlier 35-feature results (archived tables) ----------
 def run35():
     p1=np.zeros(len(y),int); p2=np.zeros(len(y),int)
     for a,b in FOLDS:
@@ -95,7 +95,7 @@ main["per_fold_n"]=[int((fold_id==k).sum()) for k in range(5)]
 out["main34"]=main
 print("34 main   same %.4f  inde %.4f  k %.3f  mF1 %.3f  blba %d  CIpt %s CIblk %s"%(main["same"]["OA"],main["inde"]["OA"],main["inde"]["kappa"],main["inde"]["macroF1"],main["inde"]["blba"],main["inde"]["CI_point"],main["inde"]["CI_block"]),flush=True)
 
-# ---------- 2. Table 1 (34) ----------
+# ---------- 2. accuracy of each feature set (34) ----------
 sets=[("Full (34)",F34),("Optical + environment (25)",G["optical"]+G["env"]),("SAR + environment (22)",G["sar"]+G["env"]),
       ("Environment (13)",G["env"]),("Optical only (12)",G["optical"]),("Optical + SAR (21)",G["optical"]+G["sar"]),("SAR only (9)",G["sar"])]
 T1={}; preds_sets={}
@@ -114,7 +114,7 @@ T1["paired_OE_vs_full"]=paired(preds_sets["Optical + environment (25)"]==y,c34)
 out["table1_34"]=T1
 print("  S+E vs E:",T1["paired_SE_vs_E"]); print("  O+E vs Full:",T1["paired_OE_vs_full"],flush=True)
 
-# ---------- 3. Table S3b hyperparameters (34) ----------
+# ---------- 3. hyperparameter sensitivity (34) ----------
 S3b={}
 for nt in [100,300,500]:
     S3b[nt]={}
@@ -126,7 +126,7 @@ out["S3b_34"]=S3b
 # ---------- 4. texture (34 + 11) ----------
 tx=pd.read_csv(os.path.join(DATA,"texture_lband.csv")) if os.path.exists(os.path.join(DATA,"texture_lband.csv")) else None
 if tx is None:
-    for cand in ["_revision_exp/texture_lband.csv","texture_features.csv"]:
+    for cand in ["texture_lband.csv","texture_features.csv"]:
         pth=os.path.join(DATA,cand)
         if os.path.exists(pth): tx=pd.read_csv(pth); break
 TEX=['NDRE_fstd1','NDRE_fstd2','NDRE_fstd4','NDVI_fstd2','NDVI_fstd4','glcm2_contrast','glcm2_ent','glcm2_idm','glcm2_var','glcm4_contrast','glcm4_ent']
@@ -145,7 +145,7 @@ if tx is not None and all(c in tx.columns for c in TEX):
 else:
     print("  texture file not found; skipped",flush=True)
 
-# (sections 5 and 6 of the working script, a within-island transfer sketch and a prior-weighting sensitivity at points, are not part of the manuscript and are omitted here)
+# (sections 5 and 6 of the working script are omitted here)
 # ---------- 7. uncertainty / selective accuracy (34) ----------
 conf=pr2.max(1); ent=-(pr2*np.log(pr2+1e-9)).sum(1)/np.log(3); correct=c34.astype(int); err=1-correct
 bins=np.linspace(0,1,11); ece=0

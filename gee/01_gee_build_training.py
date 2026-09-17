@@ -31,8 +31,8 @@ NOTE (on the sample shipped with this repo):
   sampling run whose exact filter settings could not be fully reconstructed. A post-hoc audit
   shows a substantial fraction of broadleaf points fall in small (< 0.5 ha) or edge-adjacent
   polygons, i.e. the minimum-area and negative-buffer steps below are not fully reflected in the
-  shipped points (this spatial-support limitation is stated in the manuscript). Therefore:
-    - to reproduce the paper, use the provided data/train_points.csv and feature tables;
+  shipped points (a spatial-support limitation of the reference sample). Therefore:
+    - to reproduce the published results, use the provided data/train_points.csv and feature tables;
     - to draw a NEW sample, this script is the recommended design (the area field is auto-detected
       and the filter is checked to actually take effect).
 """

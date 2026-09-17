@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""canonical_v3_D.py — Table S3 (broadleaf–bamboo enhancement strategies) recomputed on the 34-feature baseline,
+"""canonical_v3_D.py — broadleaf–bamboo enhancement strategies evaluated on the 34-feature baseline,
 plus the Presto heads under the same folds (same-window and independent year) and the multi-year (biennial) descriptors.
 Protocol identical to canonical_v3.py: GroupKFold(5) on blk (0.1°×0.09° graticule, 204 cells), RF(300, leaf 3, balanced, seed 0);
   same-window : fit train4yr[a] -> predict train4yr[b];  independent : fit train4yr[a] -> predict test1yr[b].
@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score, cohen_kappa_score, confusion_matrix,
 from scipy.stats import binomtest, chi2 as chi2d
 
 HERE=os.path.dirname(os.path.abspath(__file__)); REPO=os.path.dirname(os.path.dirname(HERE))
-DATA=os.path.join(REPO,"data","R1"); OUT=os.path.join(REPO,"results","R1"); ARCH=os.path.join(REPO,"data","archive_v1_submission"); os.makedirs(OUT,exist_ok=True)
+DATA=os.path.join(REPO,"data","analyses"); OUT=os.path.join(REPO,"results","analyses"); ARCH=os.path.join(REPO,"data","archive_v1_35features"); os.makedirs(OUT,exist_ok=True)
 tr=pd.read_csv(os.path.join(DATA,"features_train4yr_v2.csv")); te=pd.read_csv(os.path.join(DATA,"features_test1yr_2025-2026_v2.csv"))
 DROP=["RVI_mean"]
 F34=[c for c in tr.columns if c not in ("cls","lon","lat","blk")+tuple(DROP)]

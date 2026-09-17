@@ -1,5 +1,5 @@
-// ===== 34-feature exporter (rebuilt for revision R1) and next-year classification =====
-// Feature definitions (Section II-B/II-C of the manuscript):
+// ===== 34-feature exporter and next-year classification =====
+// Feature definitions:
 //   Sentinel-2 SR Harmonized, CLOUDY_PIXEL_PERCENTAGE < 60 plus SCL mask (classes 3, 8, 9, 10, 11 removed);
 //   first-order harmonic fit of NDVI, NDMI, NBR and reNDVI with t = years since 2000-01-01 -> _mean (collection mean), _amp, _pha;
 //   Sentinel-1 GRD IW ascending VV + VH in dB, RATIO = VH - VV; wet season May-October, dry season November-April;
@@ -8,7 +8,7 @@
 // Rebuilt exporter checked against the archived feature table at a 95-point subsample: climate (13) r = 1.000, Sentinel-1 (9) r = 1.000,
 //   Sentinel-2 means and amplitudes r >= 0.999, phases r 0.93-1.00 (angle wrap-around), slope 1.000.
 // The map export at the end (all 755 points, smileRandomForest 300 trees, minLeaf 3, seed 0, 2025-06 to 2026-05 composite, no prior weighting)
-//   is provided for completeness; the island-wide map shown in the manuscript (Fig. 6) is produced by 04_island_prior_weighted_20m.js.
+//   is provided for completeness; the prior-weighted island-wide map is produced by 04_island_prior_weighted_20m.js.
 // Replace the asset path below with your own copy of the reference points (data/features_train4yr.csv carries lon, lat and cls).
 var P = 'projects/remotesensingpractice-490015/assets/';
 var pts = ee.FeatureCollection(P + 'points_755');

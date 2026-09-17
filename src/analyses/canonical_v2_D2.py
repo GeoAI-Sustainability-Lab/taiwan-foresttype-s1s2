@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """canonical_v2_D2.py — label-efficiency curve under the block protocol for the Transformer (calendar-aligned, fold-internal preprocessing).
-Usage: python canonical_v2_D2.py 5,10,20,40,80,160   (writes results/R1/canonical_v2_D2.json). Requires torch."""
+Usage: python canonical_v2_D2.py 5,10,20,40,80,160   (writes results/analyses/canonical_v2_D2.json). Requires torch."""
 import sys, numpy as np, os, json
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"canonical_v2_D1.py"),encoding="utf-8").read().split("import sys")[0])
 sizes=[int(s) for s in sys.argv[1].split(",")]

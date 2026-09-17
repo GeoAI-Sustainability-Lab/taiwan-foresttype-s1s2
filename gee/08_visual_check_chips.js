@@ -1,9 +1,9 @@
 // ============================================================
-// Recent-image check of 50 existing reference points (Section III-F / Table S4 of the manuscript)
+// Recent-image check of 50 existing reference points
 // Usage: paste into the Earth Engine Code Editor and run. Step through the points with the buttons on the left,
 // compare the 2025 Sentinel-2 composite with the high-resolution basemap, and record whether the point still carries
-// its labelled class in data/R1/visual_check_50pts.csv (px_agree = Y / N / U, U = undeterminable).
-// The interpretation reported in the manuscript was made at the scale of the 3 x 3 Sentinel-2 pixels centred on the point.
+// its labelled class in data/analyses/visual_check_50pts.csv (px_agree = Y / N / U, U = undeterminable).
+// The interpretation of record was made at the scale of the 3 x 3 Sentinel-2 pixels centred on the point.
 // The 50 points are embedded below (no asset upload needed).
 
 // ============================================================
@@ -93,7 +93,7 @@ var next = ui.Button('next >', function(){ idx=Math.min(PTS.length-1,idx+1); sho
 panel.add(ui.Label('Recent-image check', {fontWeight:'bold', fontSize:'18px'}));
 panel.add(label); panel.add(sub);
 panel.add(ui.Panel([prev,next], ui.Panel.Layout.flow('horizontal')));
-panel.add(ui.Label('The circle marks 210 m around the point; the manuscript interpretation uses the central 3 x 3 Sentinel-2 pixels.'));
+panel.add(ui.Label('The circle marks 210 m around the point; the interpretation of record uses the central 3 x 3 Sentinel-2 pixels.'));
 panel.add(ui.Label('Switch to the Satellite basemap (top right) for the high-resolution view.'));
 ui.root.insert(0, panel);
 show(0);

@@ -1,4 +1,4 @@
-# Model card — rf_full.joblib (revision R1, 34 features)
+# Model card, rf_full.joblib (34 features)
 
 **Task** Per-pixel three-class forest-type classification for Taiwan
 (1 = Broadleaf, 2 = Conifer, 3 = Bamboo).
@@ -12,14 +12,14 @@ Exact feature order and class map are in `rf_full_meta.json`.
 **Reported accuracy** (`src/train_eval.py`; GroupKFold(5) on 0.1° × 0.09° graticule cells):
 same-window OA 0.889 / κ 0.833; spatio-temporally independent next year (train 2021–2024,
 predict 2025-06 to 2026-05) OA 0.868 / κ 0.801 / macro-F1 0.866, per-class recall
-0.770 / 0.958 / 0.869. These are the values of Table 1 of the revised manuscript. Every accuracy
-is agreement with the 2008–2014 inventory labels at the reference points.
+0.770 / 0.958 / 0.869. Every accuracy is agreement with the 2008–2014 inventory labels at the
+reference points.
 
 **Intended use** Research reproduction and applying the trained model to new 34-feature
 samples exported by `gee/05_feature_exporter_34.js`. Use `src/predict.py`.
 
 **Limitations** Trained on the pure-forest reference of Taiwan's main island; the broadleaf–bamboo
-pair overlaps spectrally and is confused in every configuration tested (see manuscript). Not
+pair overlaps spectrally and is confused in every configuration tested. Not
 validated outside Taiwan or for mixed stands; the fitted weights and the attributions are tied to
 local phenology and environment. Probabilities of an island-wide map should be read together with
 the prediction-entropy layer; the mapped bamboo area is a lower bound.

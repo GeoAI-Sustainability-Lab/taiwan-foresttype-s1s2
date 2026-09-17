@@ -5,7 +5,7 @@
   "numpy": "2.2.6",
   "pandas": "2.3.3"
  },
- "table1": {
+ "accuracy_by_feature_set": {
   "Full (34)": {
    "same_window": {
     "OA": 0.8887,

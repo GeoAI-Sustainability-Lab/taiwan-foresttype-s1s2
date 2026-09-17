@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """canonical_v2_D1.py — deep temporal models (calendar-aligned months, fold-internal standardisation and class weights), three seeds;
-optical-month masking sensitivity; sequence-length ablation. Input: data/R1/data.npz with Xc (755,12,16) = 2021-2024 monthly means (Jan-Dec)
+optical-month masking sensitivity; sequence-length ablation. Input: data/analyses/data.npz with Xc (755,12,16) = 2021-2024 monthly means (Jan-Dec)
 and Xi = 2025-06 .. 2026-05 (position k holds month (5+k) mod 12); alignment Xi_cal = np.roll(Xi,5,axis=1) so that position m is month m+1.
-Outputs results/R1/canonical_v2_D1.json and preds_v2_deep.npz. Requires torch."""
+Outputs results/analyses/canonical_v2_D1.json and preds_v2_deep.npz. Requires torch."""
 import numpy as np, os, json, warnings; warnings.filterwarnings("ignore")
 import torch, torch.nn as nn
 from sklearn.model_selection import GroupKFold

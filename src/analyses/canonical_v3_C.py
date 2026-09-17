@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-"""canonical_v3_C.py — feature selection nested within the spatial folds (Table S5) and SHAP global / per-class rankings (34 and 34 + 11 texture).
+"""canonical_v3_C.py — feature selection nested within the spatial folds and SHAP global / per-class rankings (34 and 34 + 11 texture).
 Nested selection: in each outer fold the RF is fitted, permutation importance computed and the top-k chosen on the training blocks only,
-then the held-out blocks are scored (no selection leakage). Output: results/R1/canonical_v3_C.json."""
+then the held-out blocks are scored (no selection leakage). Output: results/analyses/canonical_v3_C.json."""
 import numpy as np, pandas as pd, json, os, warnings; warnings.filterwarnings("ignore")
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GroupKFold
 from sklearn.inspection import permutation_importance
 from sklearn.metrics import accuracy_score, cohen_kappa_score
 HERE=os.path.dirname(os.path.abspath(__file__)); REPO=os.path.dirname(os.path.dirname(HERE))
-DATA=os.path.join(REPO,"data","R1"); OUT=os.path.join(REPO,"results","R1"); ARCH=os.path.join(REPO,"data","archive_v1_submission"); os.makedirs(OUT,exist_ok=True)
+DATA=os.path.join(REPO,"data","analyses"); OUT=os.path.join(REPO,"results","analyses"); ARCH=os.path.join(REPO,"data","archive_v1_35features"); os.makedirs(OUT,exist_ok=True)
 tr=pd.read_csv(os.path.join(DATA,"features_train4yr_v2.csv")); te=pd.read_csv(os.path.join(DATA,"features_test1yr_2025-2026_v2.csv"))
 F34=[c for c in tr.columns if c not in ("cls","lon","lat","blk","RVI_mean")]
 y=tr.cls.values.astype(int); blk=tr.blk.astype(str).values
@@ -49,7 +49,7 @@ def run(cs):
 for tag,cs in [("Full (34)",F34),("VIF-decorrelated (%d)"%len(cols),cols),("Locally selected (%d)"%len(LOCAL),LOCAL)]:
     c1,i1=run(cs); S4[tag]=dict(cvOA=c1,inOA=i1,n=len(cs)); print("  %-26s cv %.3f ind %.3f"%(tag,c1,i1),flush=True)
 out["S4_nested_34"]=S4; out["vif_kept_34"]=cols; out["vif_dropped_34"]=dropped
-# ---- SHAP (34) on the all-sample fit (explanation of the fitted classifier, as in the manuscript)
+# ---- SHAP (34) on the all-sample fit (explanation of the fitted classifier)
 import shap
 X=tr[F34].values
 rf=RandomForestClassifier(**{**RF,"n_jobs":2}).fit(X,y)

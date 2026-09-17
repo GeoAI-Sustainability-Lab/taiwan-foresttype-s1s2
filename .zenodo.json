@@ -1,7 +1,7 @@
 {
   "title": "taiwan-foresttype-s1s2: broadleaf, conifer and bamboo forest-type classification across Taiwan from Sentinel-1/2, climate and terrain (code, data and trained model)",
   "upload_type": "software",
-  "description": "Open dataset, trained Random Forest and reproducible pipeline for the manuscript 'Classification of Broadleaf, Conifer and Bamboo Forests Across Taiwan by Multi-Source Remote Sensing and Interpretable Machine Learning' (IEEE JSTARS, JSTARS-2026-04232, revised version). 755 inventory-based reference points with 34 features from Sentinel-2 optical phenology, Sentinel-1 SAR, ERA5-Land climate and SRTM terrain for the 2021-2024 training window and the 2025-06 to 2026-05 independent year, the spatial-block fold definition (0.1 x 0.09 degree graticule cells), the scripts that reproduce Table 1 and the revision analyses, the Google Earth Engine feature exporter, and the trained model.",
+  "description": "Open data, trained Random Forest and reproducible pipeline for three-class forest-type classification (broadleaf, conifer, bamboo) across Taiwan. 755 inventory-based reference points with 34 features from Sentinel-2 optical phenology, Sentinel-1 SAR, ERA5-Land climate and SRTM terrain for a 2021-2024 training window and a 2025-06 to 2026-05 independent year, the spatial-block fold definition (0.1 x 0.09 degree graticule cells), the scripts that reproduce the accuracy of every feature set and the further analyses, the Google Earth Engine feature exporter, and the trained model.",
   "creators": [
     {"name": "Hsu, Yu-Chun", "affiliation": "Department of Forestry, National Chung Hsing University, Taichung, Taiwan", "orcid": "0000-0002-6616-6906"}
   ],

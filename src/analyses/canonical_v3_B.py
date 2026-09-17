@@ -2,7 +2,7 @@
 """canonical_v3_B.py — label-efficiency curve under the block protocol (RF on 34 features and Presto + linear head), sample-size curve,
 and label-noise sensitivity over ten seeds (34 features). Block few-shot: within each outer GroupKFold fold, n points per class are drawn
 from the training blocks only and the held-out blocks are scored with next-year features; repeated draws are averaged.
-Output: results/R1/canonical_v3_B.json."""
+Output: results/analyses/canonical_v3_B.json."""
 import numpy as np, pandas as pd, json, os, warnings; warnings.filterwarnings("ignore")
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GroupKFold
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 HERE=os.path.dirname(os.path.abspath(__file__)); REPO=os.path.dirname(os.path.dirname(HERE))
-DATA=os.path.join(REPO,"data","R1"); OUT=os.path.join(REPO,"results","R1"); ARCH=os.path.join(REPO,"data","archive_v1_submission"); os.makedirs(OUT,exist_ok=True)
+DATA=os.path.join(REPO,"data","analyses"); OUT=os.path.join(REPO,"results","analyses"); ARCH=os.path.join(REPO,"data","archive_v1_35features"); os.makedirs(OUT,exist_ok=True)
 tr=pd.read_csv(os.path.join(DATA,"features_train4yr_v2.csv")); te=pd.read_csv(os.path.join(DATA,"features_test1yr_2025-2026_v2.csv"))
 F34=[c for c in tr.columns if c not in ("cls","lon","lat","blk","RVI_mean")]
 y=tr.cls.values.astype(int); blk=tr.blk.astype(str).values

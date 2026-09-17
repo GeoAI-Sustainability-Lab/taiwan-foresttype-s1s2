@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score, f1_score, recall_score
 torch.set_num_threads(os.cpu_count())
 import os
 HERE=os.path.dirname(os.path.abspath(__file__)); REPO=os.path.dirname(os.path.dirname(HERE))
-DATA=os.path.join(REPO,"data","R1"); OUT=os.path.join(REPO,"results","R1"); ARCH=os.path.join(REPO,"data","archive_v1_submission"); os.makedirs(OUT,exist_ok=True)
+DATA=os.path.join(REPO,"data","analyses"); OUT=os.path.join(REPO,"results","analyses"); ARCH=os.path.join(REPO,"data","archive_v1_35features"); os.makedirs(OUT,exist_ok=True)
 D=np.load(os.path.join(DATA,"data.npz"),allow_pickle=True)
 Xc0=D["Xc"].astype(np.float32); Xi0=D["Xi"].astype(np.float32); y=D["y"].astype(int); blk=D["blk"].astype(str)
 C=Xc0.shape[2]; T=12; NCLS=3

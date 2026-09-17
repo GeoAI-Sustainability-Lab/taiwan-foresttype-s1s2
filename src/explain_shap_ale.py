@@ -3,7 +3,7 @@ Run: python src/explain_shap_ale.py"""
 import os, numpy as np, pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-d = pd.read_csv(os.path.join(HERE,"data","features_train4yr.csv"))   # 34 features, 2021-2024 window (as in Fig. 7 of the manuscript)
+d = pd.read_csv(os.path.join(HERE,"data","features_train4yr.csv"))   # 34 features, 2021-2024 window
 y = d["cls"].values; X = d.drop(columns=["ptid","cls","lon","lat","blk","fold"])
 rf = RandomForestClassifier(n_estimators=300, min_samples_leaf=3, class_weight="balanced", random_state=0, n_jobs=-1).fit(X, y)
 try:

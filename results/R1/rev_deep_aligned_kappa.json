@@ -1,0 +1,85 @@
+{
+ "protocol": "same-window (2021-2024, out-of-fold) and independent-year kappa of the calendar-aligned deep models, three seeds (preds_v2_deep.npz)",
+ "models": {
+  "TempCNN": {
+   "same_kappa_per_seed": [
+    0.8549,
+    0.845,
+    0.8509
+   ],
+   "same_kappa_mean": 0.85,
+   "same_OA_per_seed": [
+    0.9033,
+    0.8967,
+    0.9007
+   ],
+   "same_OA_mean": 0.9,
+   "inde_kappa_per_seed": [
+    0.8309,
+    0.8329,
+    0.8289
+   ],
+   "inde_kappa_mean": 0.831
+  },
+  "LSTM": {
+   "same_kappa_per_seed": [
+    0.7912,
+    0.8091,
+    0.7912
+   ],
+   "same_kappa_mean": 0.797,
+   "same_OA_per_seed": [
+    0.8609,
+    0.8728,
+    0.8609
+   ],
+   "same_OA_mean": 0.865,
+   "inde_kappa_per_seed": [
+    0.7932,
+    0.7912,
+    0.7912
+   ],
+   "inde_kappa_mean": 0.792
+  },
+  "Transformer": {
+   "same_kappa_per_seed": [
+    0.8748,
+    0.8509,
+    0.847
+   ],
+   "same_kappa_mean": 0.858,
+   "same_OA_per_seed": [
+    0.9166,
+    0.9007,
+    0.898
+   ],
+   "same_OA_mean": 0.905,
+   "inde_kappa_per_seed": [
+    0.8152,
+    0.8054,
+    0.8252
+   ],
+   "inde_kappa_mean": 0.815
+  },
+  "LTAE": {
+   "same_kappa_per_seed": [
+    0.843,
+    0.8191,
+    0.833
+   ],
+   "same_kappa_mean": 0.832,
+   "same_OA_per_seed": [
+    0.8954,
+    0.8795,
+    0.8887
+   ],
+   "same_OA_mean": 0.888,
+   "inde_kappa_per_seed": [
+    0.833,
+    0.8311,
+    0.821
+   ],
+   "inde_kappa_mean": 0.828
+  }
+ }
+}

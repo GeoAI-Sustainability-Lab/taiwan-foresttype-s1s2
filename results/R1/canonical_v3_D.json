@@ -1,0 +1,815 @@
+{
+ "protocol": "GroupKFold(5) on 0.1x0.09 deg graticule blocks (204), RF(300, min_samples_leaf 3, balanced, seed 0); same folds as canonical_v3 (preds_v3.npz fold_id)",
+ "baseline": "34 features (RVI removed, aspect_cos corrected)",
+ "S3_34": {
+  "Baseline 34": {
+   "n_features": 34,
+   "same": {
+    "OA": 0.8887,
+    "kappa": 0.833,
+    "macroF1": 0.8878,
+    "recall": [
+     0.811,
+     0.958,
+     0.893
+    ],
+    "precision": [
+     0.9,
+     0.969,
+     0.806
+    ],
+    "F1": [
+     0.853,
+     0.963,
+     0.847
+    ],
+    "cm": [
+     [
+      197,
+      3,
+      43
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      22,
+      5,
+      225
+     ]
+    ],
+    "errors": 84,
+    "blba": 65
+   },
+   "inde": {
+    "OA": 0.8675,
+    "kappa": 0.8011,
+    "macroF1": 0.866,
+    "recall": [
+     0.77,
+     0.958,
+     0.869
+    ],
+    "precision": [
+     0.878,
+     0.958,
+     0.777
+    ],
+    "F1": [
+     0.82,
+     0.958,
+     0.82
+    ],
+    "cm": [
+     [
+      187,
+      4,
+      52
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      26,
+      7,
+      219
+     ]
+    ],
+    "errors": 100,
+    "blba": 78
+   }
+  },
+  "+ Multi-scale texture (GLCM / focal SD), 45": {
+   "n_features": 45,
+   "same": {
+    "OA": 0.8874,
+    "kappa": 0.831,
+    "macroF1": 0.8865,
+    "recall": [
+     0.823,
+     0.958,
+     0.877
+    ],
+    "precision": [
+     0.885,
+     0.969,
+     0.812
+    ],
+    "F1": [
+     0.853,
+     0.963,
+     0.844
+    ],
+    "cm": [
+     [
+      200,
+      3,
+      40
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      26,
+      5,
+      221
+     ]
+    ],
+    "errors": 85,
+    "blba": 66
+   },
+   "inde": {
+    "OA": 0.8834,
+    "kappa": 0.825,
+    "macroF1": 0.8824,
+    "recall": [
+     0.807,
+     0.958,
+     0.881
+    ],
+    "precision": [
+     0.895,
+     0.958,
+     0.804
+    ],
+    "F1": [
+     0.848,
+     0.958,
+     0.841
+    ],
+    "cm": [
+     [
+      196,
+      4,
+      43
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      23,
+      7,
+      222
+     ]
+    ],
+    "errors": 88,
+    "blba": 66
+   },
+   "vs_baseline": {
+    "A_only": 25,
+    "B_only": 13,
+    "p_exact": 0.073,
+    "p_cc": 0.0744,
+    "delta_OA": 0.0159,
+    "delta_block_CI": [
+     -0.0014,
+     0.0328
+    ]
+   }
+  },
+  "+ Spring red-edge / senescence, 42": {
+   "n_features": 42,
+   "same": {
+    "OA": 0.8861,
+    "kappa": 0.829,
+    "macroF1": 0.8852,
+    "recall": [
+     0.811,
+     0.962,
+     0.881
+    ],
+    "precision": [
+     0.879,
+     0.98,
+     0.804
+    ],
+    "F1": [
+     0.844,
+     0.971,
+     0.841
+    ],
+    "cm": [
+     [
+      197,
+      2,
+      44
+     ],
+     [
+      0,
+      250,
+      10
+     ],
+     [
+      27,
+      3,
+      222
+     ]
+    ],
+    "errors": 86,
+    "blba": 71
+   },
+   "inde": {
+    "OA": 0.8715,
+    "kappa": 0.807,
+    "macroF1": 0.8692,
+    "recall": [
+     0.724,
+     0.962,
+     0.921
+    ],
+    "precision": [
+     0.917,
+     0.969,
+     0.761
+    ],
+    "F1": [
+     0.809,
+     0.965,
+     0.833
+    ],
+    "cm": [
+     [
+      176,
+      3,
+      64
+     ],
+     [
+      1,
+      250,
+      9
+     ],
+     [
+      15,
+      5,
+      232
+     ]
+    ],
+    "errors": 97,
+    "blba": 79
+   },
+   "vs_baseline": {
+    "A_only": 24,
+    "B_only": 21,
+    "p_exact": 0.766,
+    "p_cc": 0.7656,
+    "delta_OA": 0.004,
+    "delta_block_CI": [
+     -0.0159,
+     0.0238
+    ]
+   },
+   "features": [
+    "NDRE_spr",
+    "CIre_spr",
+    "NDRE_mean",
+    "NDRE_mar",
+    "LSWI_spr",
+    "NDRE_spr_win",
+    "PSRI_spr",
+    "PSRI_apr_dip"
+   ],
+   "note": "seasonal means computed per window (2021-2024 for training, 2025 for the independent year)"
+  },
+  "Hierarchical dedicated sub-model, 34": {
+   "n_features": 34,
+   "inde": {
+    "OA": 0.8636,
+    "kappa": 0.7952,
+    "macroF1": 0.8617,
+    "recall": [
+     0.77,
+     0.965,
+     0.849
+    ],
+    "precision": [
+     0.858,
+     0.958,
+     0.778
+    ],
+    "F1": [
+     0.811,
+     0.962,
+     0.812
+    ],
+    "cm": [
+     [
+      187,
+      3,
+      53
+     ],
+     [
+      1,
+      251,
+      8
+     ],
+     [
+      30,
+      8,
+      214
+     ]
+    ],
+    "errors": 103,
+    "blba": 83
+   },
+   "vs_baseline": {
+    "A_only": 10,
+    "B_only": 13,
+    "p_exact": 0.6776,
+    "p_cc": 0.6767,
+    "delta_OA": -0.004,
+    "delta_block_CI": [
+     -0.0206,
+     0.0101
+    ]
+   },
+   "note": "stage 1 conifer-versus-rest on all training points; stage 2 broadleaf-versus-bamboo specialist trained on broadleaf and bamboo training points"
+  },
+  "Oracle gating (diagnostic, not deployable), 34": {
+   "n_features": 34,
+   "inde": {
+    "OA": 0.8728,
+    "kappa": 0.8091,
+    "macroF1": 0.8721,
+    "recall": [
+     0.778,
+     0.958,
+     0.877
+    ],
+    "precision": [
+     0.859,
+     1.0,
+     0.773
+    ],
+    "F1": [
+     0.816,
+     0.978,
+     0.822
+    ],
+    "cm": [
+     [
+      189,
+      0,
+      54
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      31,
+      0,
+      221
+     ]
+    ],
+    "errors": 96,
+    "blba": 85
+   },
+   "vs_baseline": {
+    "A_only": 16,
+    "B_only": 12,
+    "p_exact": 0.5716,
+    "p_cc": 0.5708,
+    "delta_OA": 0.0053,
+    "delta_block_CI": [
+     -0.0129,
+     0.0224
+    ]
+   },
+   "note": "specialist applied to the TRUE broadleaf/bamboo points of the held-out fold; uses the label at inference"
+  },
+  "+ DINOv2 ViT-S/14 embeddings (384), 418": {
+   "n_features": 418,
+   "same": {
+    "OA": 0.8583,
+    "kappa": 0.7872,
+    "macroF1": 0.8568,
+    "recall": [
+     0.77,
+     0.958,
+     0.841
+    ],
+    "precision": [
+     0.858,
+     0.958,
+     0.765
+    ],
+    "F1": [
+     0.811,
+     0.958,
+     0.802
+    ],
+    "cm": [
+     [
+      187,
+      2,
+      54
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      31,
+      9,
+      212
+     ]
+    ],
+    "errors": 107,
+    "blba": 85
+   },
+   "inde": {
+    "OA": 0.8609,
+    "kappa": 0.7911,
+    "macroF1": 0.8589,
+    "recall": [
+     0.757,
+     0.965,
+     0.853
+    ],
+    "precision": [
+     0.868,
+     0.951,
+     0.771
+    ],
+    "F1": [
+     0.809,
+     0.958,
+     0.81
+    ],
+    "cm": [
+     [
+      184,
+      3,
+      56
+     ],
+     [
+      1,
+      251,
+      8
+     ],
+     [
+      27,
+      10,
+      215
+     ]
+    ],
+    "errors": 105,
+    "blba": 83
+   },
+   "vs_baseline": {
+    "A_only": 20,
+    "B_only": 25,
+    "p_exact": 0.5515,
+    "p_cc": 0.551,
+    "delta_OA": -0.0066,
+    "delta_block_CI": [
+     -0.0258,
+     0.012
+    ]
+   },
+   "note": "frozen DINOv2 ViT-S/14 embedding of the true-colour Sentinel-2 patch at each point (same value in training and testing)"
+  },
+  "+ Multi-year biennial descriptors (30), 64": {
+   "n_features": 64,
+   "same": {
+    "OA": 0.8848,
+    "kappa": 0.827,
+    "macroF1": 0.8842,
+    "recall": [
+     0.819,
+     0.95,
+     0.881
+    ],
+    "precision": [
+     0.888,
+     0.972,
+     0.801
+    ],
+    "F1": [
+     0.852,
+     0.961,
+     0.839
+    ],
+    "cm": [
+     [
+      199,
+      2,
+      42
+     ],
+     [
+      0,
+      247,
+      13
+     ],
+     [
+      25,
+      5,
+      222
+     ]
+    ],
+    "errors": 87,
+    "blba": 67
+   },
+   "inde": {
+    "OA": 0.8715,
+    "kappa": 0.8071,
+    "macroF1": 0.8703,
+    "recall": [
+     0.79,
+     0.954,
+     0.865
+    ],
+    "precision": [
+     0.877,
+     0.958,
+     0.787
+    ],
+    "F1": [
+     0.831,
+     0.956,
+     0.824
+    ],
+    "cm": [
+     [
+      192,
+      4,
+      47
+     ],
+     [
+      0,
+      248,
+      12
+     ],
+     [
+      27,
+      7,
+      218
+     ]
+    ],
+    "errors": 97,
+    "blba": 74
+   },
+   "vs_baseline": {
+    "A_only": 14,
+    "B_only": 11,
+    "p_exact": 0.69,
+    "p_cc": 0.6892,
+    "delta_OA": 0.004,
+    "delta_block_CI": [
+     -0.0109,
+     0.0208
+    ]
+   },
+   "note": "inter-annual variance, 24-month harmonic amplitude, biennial/annual amplitude ratio, spring consecutive-year difference and odd/even alternation of six indices from 2017-2025 monthly Sentinel-2; multi-year descriptors take the same value in training and testing"
+  },
+  "Fusion network + multi-objective loss (34 + texture)": {
+   "n_features": 45,
+   "inde": {
+    "OA": 0.8768,
+    "kappa": 0.8152,
+    "macroF1": 0.8748,
+    "recall": [
+     0.881,
+     0.965,
+     0.782
+    ],
+    "precision": [
+     0.817,
+     0.937,
+     0.876
+    ],
+    "F1": [
+     0.848,
+     0.951,
+     0.826
+    ],
+    "cm": [
+     [
+      214,
+      5,
+      24
+     ],
+     [
+      5,
+      251,
+      4
+     ],
+     [
+      43,
+      12,
+      197
+     ]
+    ],
+    "errors": 93,
+    "blba": 67
+   },
+   "vs_baseline": {
+    "A_only": 47,
+    "B_only": 40,
+    "p_exact": 0.5203,
+    "p_cc": 0.5201,
+    "delta_OA": 0.0093,
+    "delta_block_CI": [
+     -0.0152,
+     0.0356
+    ]
+   },
+   "note": "two-branch MLP (34 harmonic features; 11 texture features) trained 250 full-batch epochs, Adam 2e-3, wd 1e-4, seed 0; loss = weighted cross-entropy + 0.3 x bamboo-versus-rest auxiliary + 0.3 x supervised contrastive term"
+  }
+ },
+ "presto_heads": {
+  "Presto+Linear": {
+   "same": {
+    "OA": 0.8861,
+    "kappa": 0.829,
+    "macroF1": 0.8848,
+    "recall": [
+     0.819,
+     0.962,
+     0.873
+    ],
+    "precision": [
+     0.865,
+     0.969,
+     0.824
+    ],
+    "F1": [
+     0.841,
+     0.965,
+     0.848
+    ],
+    "cm": [
+     [
+      199,
+      4,
+      40
+     ],
+     [
+      3,
+      250,
+      7
+     ],
+     [
+      28,
+      4,
+      220
+     ]
+    ],
+    "errors": 86,
+    "blba": 68
+   },
+   "inde": {
+    "OA": 0.8344,
+    "kappa": 0.7512,
+    "macroF1": 0.8331,
+    "recall": [
+     0.638,
+     0.885,
+     0.972
+    ],
+    "precision": [
+     0.951,
+     0.991,
+     0.681
+    ],
+    "F1": [
+     0.764,
+     0.935,
+     0.801
+    ],
+    "cm": [
+     [
+      155,
+      2,
+      86
+     ],
+     [
+      1,
+      230,
+      29
+     ],
+     [
+      7,
+      0,
+      245
+     ]
+    ],
+    "errors": 125,
+    "blba": 93
+   },
+   "vs_RF34_inde": {
+    "A_only": 44,
+    "B_only": 69,
+    "p_exact": 0.0235,
+    "p_cc": 0.024,
+    "delta_OA": -0.0331,
+    "delta_block_CI": [
+     -0.0727,
+     0.0083
+    ]
+   }
+  },
+  "Presto+RF": {
+   "same": {
+    "OA": 0.8291,
+    "kappa": 0.7435,
+    "macroF1": 0.8277,
+    "recall": [
+     0.724,
+     0.923,
+     0.833
+    ],
+    "precision": [
+     0.819,
+     0.945,
+     0.734
+    ],
+    "F1": [
+     0.769,
+     0.934,
+     0.781
+    ],
+    "cm": [
+     [
+      176,
+      5,
+      62
+     ],
+     [
+      6,
+      240,
+      14
+     ],
+     [
+      33,
+      9,
+      210
+     ]
+    ],
+    "errors": 129,
+    "blba": 95
+   },
+   "inde": {
+    "OA": 0.8132,
+    "kappa": 0.7196,
+    "macroF1": 0.8122,
+    "recall": [
+     0.683,
+     0.892,
+     0.857
+    ],
+    "precision": [
+     0.814,
+     0.955,
+     0.701
+    ],
+    "F1": [
+     0.743,
+     0.922,
+     0.771
+    ],
+    "cm": [
+     [
+      166,
+      3,
+      74
+     ],
+     [
+      10,
+      232,
+      18
+     ],
+     [
+      28,
+      8,
+      216
+     ]
+    ],
+    "errors": 141,
+    "blba": 102
+   },
+   "vs_RF34_inde": {
+    "A_only": 33,
+    "B_only": 74,
+    "p_exact": 0.0001,
+    "p_cc": 0.0001,
+    "delta_OA": -0.0543,
+    "delta_block_CI": [
+     -0.0858,
+     -0.0219
+    ]
+   }
+  },
+  "note": "frozen 128-d Presto embeddings (_presto_Ec.npy train window, _presto_Ei.npy independent year); linear head = standardised multinomial logistic regression (balanced), RF head = same RF as the main model"
+ }
+}

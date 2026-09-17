@@ -1,0 +1,69 @@
+{
+ "protocol": "block few-shot (per outer fold sample n/class from training blocks; predict held-out blocks with calendar-aligned next-year sequences); Transformer, per-fold standardisation, seeds = draw index",
+ "5": {
+  "OA_mean": 0.736,
+  "OA_min": 0.709,
+  "OA_max": 0.768,
+  "recall_mean": [
+   0.568,
+   0.901,
+   0.728
+  ],
+  "reps": 3
+ },
+ "10": {
+  "OA_mean": 0.775,
+  "OA_min": 0.743,
+  "OA_max": 0.811,
+  "recall_mean": [
+   0.72,
+   0.913,
+   0.686
+  ],
+  "reps": 3
+ },
+ "20": {
+  "OA_mean": 0.814,
+  "OA_min": 0.788,
+  "OA_max": 0.856,
+  "recall_mean": [
+   0.798,
+   0.938,
+   0.7
+  ],
+  "reps": 3
+ },
+ "40": {
+  "OA_mean": 0.813,
+  "OA_min": 0.779,
+  "OA_max": 0.848,
+  "recall_mean": [
+   0.838,
+   0.931,
+   0.669
+  ],
+  "reps": 2
+ },
+ "80": {
+  "OA_mean": 0.852,
+  "OA_min": 0.813,
+  "OA_max": 0.89,
+  "recall_mean": [
+   0.928,
+   0.952,
+   0.674
+  ],
+  "reps": 2
+ },
+ "160": {
+  "OA_mean": 0.866,
+  "OA_min": 0.857,
+  "OA_max": 0.875,
+  "recall_mean": [
+   0.895,
+   0.96,
+   0.742
+  ],
+  "reps": 2
+ }
+}

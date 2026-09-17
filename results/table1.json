@@ -1,0 +1,622 @@
+{
+ "protocol": "GroupKFold(5) on 0.1x0.09 deg graticule blocks; RF 300 trees, min_samples_leaf 3, balanced, seed 0",
+ "versions": {
+  "sklearn": "1.7.2",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3"
+ },
+ "table1": {
+  "Full (34)": {
+   "same_window": {
+    "OA": 0.8887,
+    "kappa": 0.833,
+    "macroF1": 0.8878,
+    "recall": [
+     0.811,
+     0.958,
+     0.893
+    ],
+    "precision": [
+     0.9,
+     0.969,
+     0.806
+    ],
+    "F1": [
+     0.853,
+     0.963,
+     0.847
+    ],
+    "confusion_matrix": [
+     [
+      197,
+      3,
+      43
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      22,
+      5,
+      225
+     ]
+    ],
+    "errors": 84,
+    "broadleaf_bamboo_confusions": 65
+   },
+   "next_year": {
+    "OA": 0.8675,
+    "kappa": 0.8011,
+    "macroF1": 0.866,
+    "recall": [
+     0.77,
+     0.958,
+     0.869
+    ],
+    "precision": [
+     0.878,
+     0.958,
+     0.777
+    ],
+    "F1": [
+     0.82,
+     0.958,
+     0.82
+    ],
+    "confusion_matrix": [
+     [
+      187,
+      4,
+      52
+     ],
+     [
+      0,
+      249,
+      11
+     ],
+     [
+      26,
+      7,
+      219
+     ]
+    ],
+    "errors": 100,
+    "broadleaf_bamboo_confusions": 78,
+    "CI_block_OA": [
+     0.8289,
+     0.9013
+    ]
+   }
+  },
+  "Optical + environment (25)": {
+   "same_window": {
+    "OA": 0.8901,
+    "kappa": 0.835,
+    "macroF1": 0.8893,
+    "recall": [
+     0.811,
+     0.954,
+     0.901
+    ],
+    "precision": [
+     0.904,
+     0.973,
+     0.805
+    ],
+    "F1": [
+     0.855,
+     0.963,
+     0.85
+    ],
+    "confusion_matrix": [
+     [
+      197,
+      3,
+      43
+     ],
+     [
+      0,
+      248,
+      12
+     ],
+     [
+      21,
+      4,
+      227
+     ]
+    ],
+    "errors": 83,
+    "broadleaf_bamboo_confusions": 64
+   },
+   "next_year": {
+    "OA": 0.8702,
+    "kappa": 0.8051,
+    "macroF1": 0.8685,
+    "recall": [
+     0.774,
+     0.962,
+     0.869
+    ],
+    "precision": [
+     0.883,
+     0.951,
+     0.785
+    ],
+    "F1": [
+     0.825,
+     0.956,
+     0.825
+    ],
+    "confusion_matrix": [
+     [
+      188,
+      4,
+      51
+     ],
+     [
+      1,
+      250,
+      9
+     ],
+     [
+      24,
+      9,
+      219
+     ]
+    ],
+    "errors": 98,
+    "broadleaf_bamboo_confusions": 75,
+    "CI_block_OA": [
+     0.8346,
+     0.902
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.0136,
+     0.0181
+    ]
+   }
+  },
+  "SAR + environment (22)": {
+   "same_window": {
+    "OA": 0.8768,
+    "kappa": 0.8151,
+    "macroF1": 0.8762,
+    "recall": [
+     0.827,
+     0.946,
+     0.853
+    ],
+    "precision": [
+     0.87,
+     0.961,
+     0.802
+    ],
+    "F1": [
+     0.848,
+     0.953,
+     0.827
+    ],
+    "confusion_matrix": [
+     [
+      201,
+      3,
+      39
+     ],
+     [
+      0,
+      246,
+      14
+     ],
+     [
+      30,
+      7,
+      215
+     ]
+    ],
+    "errors": 93,
+    "broadleaf_bamboo_confusions": 69
+   },
+   "next_year": {
+    "OA": 0.8225,
+    "kappa": 0.7335,
+    "macroF1": 0.8201,
+    "recall": [
+     0.716,
+     0.954,
+     0.79
+    ],
+    "precision": [
+     0.809,
+     0.939,
+     0.721
+    ],
+    "F1": [
+     0.76,
+     0.947,
+     0.754
+    ],
+    "confusion_matrix": [
+     [
+      174,
+      4,
+      65
+     ],
+     [
+      0,
+      248,
+      12
+     ],
+     [
+      41,
+      12,
+      199
+     ]
+    ],
+    "errors": 134,
+    "broadleaf_bamboo_confusions": 106,
+    "CI_block_OA": [
+     0.7717,
+     0.8666
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.0729,
+     -0.0194
+    ]
+   }
+  },
+  "Environment (13)": {
+   "same_window": {
+    "OA": 0.8689,
+    "kappa": 0.8032,
+    "macroF1": 0.8683,
+    "recall": [
+     0.815,
+     0.946,
+     0.841
+    ],
+    "precision": [
+     0.853,
+     0.972,
+     0.785
+    ],
+    "F1": [
+     0.834,
+     0.959,
+     0.812
+    ],
+    "confusion_matrix": [
+     [
+      198,
+      1,
+      44
+     ],
+     [
+      0,
+      246,
+      14
+     ],
+     [
+      34,
+      6,
+      212
+     ]
+    ],
+    "errors": 99,
+    "broadleaf_bamboo_confusions": 78
+   },
+   "next_year": {
+    "OA": 0.8159,
+    "kappa": 0.7234,
+    "macroF1": 0.813,
+    "recall": [
+     0.65,
+     0.954,
+     0.833
+    ],
+    "precision": [
+     0.814,
+     0.973,
+     0.686
+    ],
+    "F1": [
+     0.723,
+     0.963,
+     0.753
+    ],
+    "confusion_matrix": [
+     [
+      158,
+      1,
+      84
+     ],
+     [
+      0,
+      248,
+      12
+     ],
+     [
+      36,
+      6,
+      210
+     ]
+    ],
+    "errors": 139,
+    "broadleaf_bamboo_confusions": 120,
+    "CI_block_OA": [
+     0.7608,
+     0.8641
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.0856,
+     -0.0209
+    ]
+   }
+  },
+  "Optical only (12)": {
+   "same_window": {
+    "OA": 0.8106,
+    "kappa": 0.7158,
+    "macroF1": 0.8097,
+    "recall": [
+     0.774,
+     0.881,
+     0.774
+    ],
+    "precision": [
+     0.793,
+     0.888,
+     0.75
+    ],
+    "F1": [
+     0.783,
+     0.884,
+     0.762
+    ],
+    "confusion_matrix": [
+     [
+      188,
+      11,
+      44
+     ],
+     [
+      10,
+      229,
+      21
+     ],
+     [
+      39,
+      18,
+      195
+     ]
+    ],
+    "errors": 143,
+    "broadleaf_bamboo_confusions": 83
+   },
+   "next_year": {
+    "OA": 0.7841,
+    "kappa": 0.6757,
+    "macroF1": 0.7821,
+    "recall": [
+     0.728,
+     0.873,
+     0.746
+    ],
+    "precision": [
+     0.797,
+     0.799,
+     0.755
+    ],
+    "F1": [
+     0.761,
+     0.835,
+     0.75
+    ],
+    "confusion_matrix": [
+     [
+      177,
+      26,
+      40
+     ],
+     [
+      12,
+      227,
+      21
+     ],
+     [
+      33,
+      31,
+      188
+     ]
+    ],
+    "errors": 163,
+    "broadleaf_bamboo_confusions": 73,
+    "CI_block_OA": [
+     0.7476,
+     0.8169
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.1164,
+     -0.0513
+    ]
+   }
+  },
+  "Optical + SAR (21)": {
+   "same_window": {
+    "OA": 0.8093,
+    "kappa": 0.7138,
+    "macroF1": 0.8085,
+    "recall": [
+     0.761,
+     0.881,
+     0.782
+    ],
+    "precision": [
+     0.791,
+     0.898,
+     0.741
+    ],
+    "F1": [
+     0.776,
+     0.889,
+     0.761
+    ],
+    "confusion_matrix": [
+     [
+      185,
+      9,
+      49
+     ],
+     [
+      11,
+      229,
+      20
+     ],
+     [
+      38,
+      17,
+      197
+     ]
+    ],
+    "errors": 144,
+    "broadleaf_bamboo_confusions": 87
+   },
+   "next_year": {
+    "OA": 0.796,
+    "kappa": 0.6936,
+    "macroF1": 0.7936,
+    "recall": [
+     0.728,
+     0.892,
+     0.762
+    ],
+    "precision": [
+     0.801,
+     0.823,
+     0.762
+    ],
+    "F1": [
+     0.763,
+     0.856,
+     0.762
+    ],
+    "confusion_matrix": [
+     [
+      177,
+      23,
+      43
+     ],
+     [
+      11,
+      232,
+      17
+     ],
+     [
+      33,
+      27,
+      192
+     ]
+    ],
+    "errors": 154,
+    "broadleaf_bamboo_confusions": 76,
+    "CI_block_OA": [
+     0.7559,
+     0.8313
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.1013,
+     -0.043
+    ]
+   }
+  },
+  "SAR only (9)": {
+   "same_window": {
+    "OA": 0.5669,
+    "kappa": 0.3498,
+    "macroF1": 0.565,
+    "recall": [
+     0.502,
+     0.638,
+     0.556
+    ],
+    "precision": [
+     0.533,
+     0.626,
+     0.536
+    ],
+    "F1": [
+     0.517,
+     0.632,
+     0.546
+    ],
+    "confusion_matrix": [
+     [
+      122,
+      47,
+      74
+     ],
+     [
+      47,
+      166,
+      47
+     ],
+     [
+      60,
+      52,
+      140
+     ]
+    ],
+    "errors": 327,
+    "broadleaf_bamboo_confusions": 134
+   },
+   "next_year": {
+    "OA": 0.4623,
+    "kappa": 0.1949,
+    "macroF1": 0.4593,
+    "recall": [
+     0.527,
+     0.523,
+     0.337
+    ],
+    "precision": [
+     0.394,
+     0.551,
+     0.464
+    ],
+    "F1": [
+     0.451,
+     0.536,
+     0.391
+    ],
+    "confusion_matrix": [
+     [
+      128,
+      59,
+      56
+     ],
+     [
+      82,
+      136,
+      42
+     ],
+     [
+      115,
+      52,
+      85
+     ]
+    ],
+    "errors": 406,
+    "broadleaf_bamboo_confusions": 171,
+    "CI_block_OA": [
+     0.4174,
+     0.5054
+    ],
+    "delta_OA_vs_full_CI_block": [
+     -0.4555,
+     -0.3554
+    ]
+   }
+  }
+ }
+}

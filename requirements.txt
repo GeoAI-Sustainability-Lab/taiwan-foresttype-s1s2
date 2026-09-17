@@ -1,11 +1,13 @@
-joblib
-numpy
-pandas
-scikit-learn
-xgboost
-shap
-matplotlib
-geopandas
-rasterio
-pyproj
-scipy
+# versions used for the revision (Python 3.10)
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+joblib==1.5.3
+xgboost==3.2.0
+shap==0.49.1
+matplotlib==3.10.9
+# optional: deep-model scripts in src/revision_R1 (CPU is sufficient)
+# torch==2.12.0
+# optional: boundary_dissolve.py
+# geopandas, rasterio, pyproj

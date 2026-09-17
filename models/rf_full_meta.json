@@ -12,7 +12,6 @@
     "RATIO_mean",
     "RATIO_std",
     "RATIO_wetdry",
-    "RVI_mean",
     "VH_amp",
     "VH_mean",
     "VH_pha",
@@ -47,5 +46,6 @@
     "class_weight": "balanced",
     "random_state": 0
   },
-  "trained_on": "all 755 samples (5-year features)"
+  "trained_on": "all 755 reference points, 2021-2024 features (34 features)",
+  "sklearn": "1.7.2"
 }

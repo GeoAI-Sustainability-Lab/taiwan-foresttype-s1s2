@@ -1,0 +1,241 @@
+{
+ "protocol": "block few-shot: per outer GroupKFold(5) fold, sample n per class from the TRAINING blocks only; predict held-out blocks with next-year features; OOF pooled; repeats = independent random draws",
+ "few_shot_block": {
+  "RF": {
+   "5": {
+    "OA_mean": 0.764,
+    "OA_min": 0.67,
+    "OA_max": 0.807,
+    "macroF1_mean": 0.758,
+    "recall_mean": [
+     0.635,
+     0.955,
+     0.691
+    ],
+    "reps": 10
+   },
+   "10": {
+    "OA_mean": 0.802,
+    "OA_min": 0.771,
+    "OA_max": 0.829,
+    "macroF1_mean": 0.798,
+    "recall_mean": [
+     0.695,
+     0.955,
+     0.747
+    ],
+    "reps": 10
+   },
+   "20": {
+    "OA_mean": 0.824,
+    "OA_min": 0.804,
+    "OA_max": 0.848,
+    "macroF1_mean": 0.821,
+    "recall_mean": [
+     0.709,
+     0.961,
+     0.794
+    ],
+    "reps": 8
+   },
+   "40": {
+    "OA_mean": 0.844,
+    "OA_min": 0.833,
+    "OA_max": 0.854,
+    "macroF1_mean": 0.842,
+    "recall_mean": [
+     0.731,
+     0.962,
+     0.832
+    ],
+    "reps": 6
+   },
+   "80": {
+    "OA_mean": 0.849,
+    "OA_min": 0.841,
+    "OA_max": 0.852,
+    "macroF1_mean": 0.846,
+    "recall_mean": [
+     0.728,
+     0.964,
+     0.847
+    ],
+    "reps": 4
+   },
+   "160": {
+    "OA_mean": 0.864,
+    "OA_min": 0.858,
+    "OA_max": 0.872,
+    "macroF1_mean": 0.862,
+    "recall_mean": [
+     0.768,
+     0.959,
+     0.858
+    ],
+    "reps": 3
+   },
+   "all": {
+    "OA_mean": 0.868,
+    "recall_mean": [
+     0.77,
+     0.958,
+     0.869
+    ],
+    "reps": 1
+   }
+  },
+  "Presto+Linear": {
+   "5": {
+    "OA_mean": 0.686,
+    "OA_min": 0.621,
+    "OA_max": 0.736,
+    "macroF1_mean": 0.687,
+    "recall_mean": [
+     0.587,
+     0.741,
+     0.725
+    ],
+    "reps": 10
+   },
+   "10": {
+    "OA_mean": 0.71,
+    "OA_min": 0.66,
+    "OA_max": 0.768,
+    "macroF1_mean": 0.713,
+    "recall_mean": [
+     0.637,
+     0.774,
+     0.715
+    ],
+    "reps": 10
+   },
+   "20": {
+    "OA_mean": 0.75,
+    "OA_min": 0.695,
+    "OA_max": 0.795,
+    "macroF1_mean": 0.752,
+    "recall_mean": [
+     0.698,
+     0.821,
+     0.726
+    ],
+    "reps": 8
+   },
+   "40": {
+    "OA_mean": 0.784,
+    "OA_min": 0.731,
+    "OA_max": 0.84,
+    "macroF1_mean": 0.786,
+    "recall_mean": [
+     0.684,
+     0.836,
+     0.827
+    ],
+    "reps": 6
+   },
+   "80": {
+    "OA_mean": 0.81,
+    "OA_min": 0.791,
+    "OA_max": 0.828,
+    "macroF1_mean": 0.81,
+    "recall_mean": [
+     0.681,
+     0.874,
+     0.869
+    ],
+    "reps": 4
+   },
+   "160": {
+    "OA_mean": 0.82,
+    "OA_min": 0.804,
+    "OA_max": 0.846,
+    "macroF1_mean": 0.819,
+    "recall_mean": [
+     0.624,
+     0.872,
+     0.956
+    ],
+    "reps": 3
+   },
+   "all": {
+    "OA_mean": 0.834,
+    "recall_mean": [
+     0.638,
+     0.885,
+     0.972
+    ],
+    "reps": 1
+   }
+  }
+ },
+ "S3a_34": {
+  "5 / 15": {
+   "cvOA": 0.753,
+   "inOA": 0.753,
+   "reps": 10
+  },
+  "10 / 30": {
+   "cvOA": 0.807,
+   "inOA": 0.807,
+   "reps": 10
+  },
+  "20 / 60": {
+   "cvOA": 0.796,
+   "inOA": 0.783,
+   "reps": 8
+  },
+  "40 / 120": {
+   "cvOA": 0.822,
+   "inOA": 0.812,
+   "reps": 6
+  },
+  "80 / 240": {
+   "cvOA": 0.857,
+   "inOA": 0.844,
+   "reps": 4
+  },
+  "160 / 480": {
+   "cvOA": 0.877,
+   "inOA": 0.86,
+   "reps": 3
+  },
+  "all (755)": {
+   "cvOA": 0.889,
+   "inOA": 0.868,
+   "reps": 1
+  }
+ },
+ "label_noise_x10_34": {
+  "protocol": "fraction of ALL labels flipped to a random other class (seeds 0-9); training uses noisy labels; held-out blocks scored against original labels with next-year features",
+  "results": {
+   "0.05": {
+    "mean": 0.869,
+    "p2_5": 0.866,
+    "p97_5": 0.874,
+    "min": 0.866,
+    "max": 0.874
+   },
+   "0.1": {
+    "mean": 0.868,
+    "p2_5": 0.863,
+    "p97_5": 0.874,
+    "min": 0.862,
+    "max": 0.874
+   },
+   "0.2": {
+    "mean": 0.86,
+    "p2_5": 0.851,
+    "p97_5": 0.869,
+    "min": 0.85,
+    "max": 0.872
+   },
+   "0.3": {
+    "mean": 0.843,
+    "p2_5": 0.823,
+    "p97_5": 0.861,
+    "min": 0.82,
+    "max": 0.862
+   }
+  }
+ }
+}

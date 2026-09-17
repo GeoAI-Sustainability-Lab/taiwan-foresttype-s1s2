@@ -6,8 +6,8 @@ import os, numpy as np, pandas as pd, matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from train_eval import X, y, spatial_cv, groups   # noqa
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT=os.path.join(HERE,"figures"); os.makedirs(OUT,exist_ok=True)
-pred, oa, k = spatial_cv(X)
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score, cohen_kappa_score
+pred = spatial_cv(list(X.columns)); oa = accuracy_score(y, pred); k = cohen_kappa_score(y, pred)
 M = confusion_matrix(y, pred, labels=[1,2,3])
 fig, ax = plt.subplots(1,3, figsize=(11,3.4))
 im=ax[0].imshow(M, cmap="Blues")
@@ -16,7 +16,7 @@ for i in range(3):
 ax[0].set_xticks(range(3)); ax[0].set_xticklabels(["Broad","Conif","Bam"]); ax[0].set_yticks(range(3)); ax[0].set_yticklabels(["Broad","Conif","Bam"])
 ax[0].set_title(f"Confusion (OA={oa:.3f}, kappa={k:.3f})"); ax[0].set_xlabel("Predicted"); ax[0].set_ylabel("Reference")
 abl={"Optical":groups["optical"],"SAR":groups["sar"],"Env":groups["env"],"Opt+SAR":groups["optical"]+groups["sar"]}
-vals=[spatial_cv(X[c])[1] for c in abl.values()]+[oa]
+vals=[accuracy_score(y, spatial_cv(c)) for c in abl.values()]+[oa]
 ax[1].bar(list(abl.keys())+["Full"], vals); ax[1].set_ylim(0,1); ax[1].set_title("Feature-group ablation"); ax[1].set_ylabel("OA")
 PA=[M[i,i]/M[i].sum() for i in range(3)]; UA=[M[i,i]/M[:,i].sum() for i in range(3)]; xx=np.arange(3)
 ax[2].bar(xx-0.2,PA,0.4,label="Producer's"); ax[2].bar(xx+0.2,UA,0.4,label="User's")

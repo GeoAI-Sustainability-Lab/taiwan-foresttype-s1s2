@@ -1,0 +1,19 @@
+{
+  "eraA": {
+    "OA": 0.8728476821192053,
+    "kappa": 0.8090908372557335,
+    "blba": 83
+  },
+  "eraB": {
+    "OA": 0.847682119205298,
+    "kappa": 0.7713410619571572,
+    "blba": 98
+  },
+  "cross": {
+    "both_ok": 364,
+    "recent_change": 41,
+    "intrinsic_both_wrong": 63,
+    "improved": 27,
+    "n": 495
+  }
+}

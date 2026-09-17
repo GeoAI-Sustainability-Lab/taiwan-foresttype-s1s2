@@ -1,0 +1,306 @@
+{
+ "protocol": "GroupKFold(5) on blk; per-fold standardisation (train blocks only) and class weights; Xi rolled to calendar order; 100 full-batch epochs, Adam 1e-3, wd 1e-4; seeds 0,1,2",
+ "TempCNN": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "same_OA": 0.9033,
+    "inde_OA": 0.8874,
+    "inde_kappa": 0.8309,
+    "inde_macroF1": 0.8853,
+    "inde_recall": [
+     0.761,
+     0.973,
+     0.921
+    ]
+   },
+   {
+    "seed": 1,
+    "same_OA": 0.8967,
+    "inde_OA": 0.8887,
+    "inde_kappa": 0.8329,
+    "inde_macroF1": 0.887,
+    "inde_recall": [
+     0.778,
+     0.969,
+     0.913
+    ]
+   },
+   {
+    "seed": 2,
+    "same_OA": 0.9007,
+    "inde_OA": 0.8861,
+    "inde_kappa": 0.8289,
+    "inde_macroF1": 0.884,
+    "inde_recall": [
+     0.749,
+     0.973,
+     0.929
+    ]
+   }
+  ],
+  "same_OA_mean": 0.9,
+  "inde_OA_mean": 0.887,
+  "inde_OA_range": [
+   0.886,
+   0.889
+  ],
+  "inde_macroF1_mean": 0.885,
+  "inde_recall_mean": [
+   0.763,
+   0.972,
+   0.921
+  ]
+ },
+ "LSTM": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "same_OA": 0.8609,
+    "inde_OA": 0.8623,
+    "inde_kappa": 0.7932,
+    "inde_macroF1": 0.8604,
+    "inde_recall": [
+     0.745,
+     0.962,
+     0.873
+    ]
+   },
+   {
+    "seed": 1,
+    "same_OA": 0.8728,
+    "inde_OA": 0.8609,
+    "inde_kappa": 0.7912,
+    "inde_macroF1": 0.8593,
+    "inde_recall": [
+     0.765,
+     0.965,
+     0.845
+    ]
+   },
+   {
+    "seed": 2,
+    "same_OA": 0.8609,
+    "inde_OA": 0.8609,
+    "inde_kappa": 0.7912,
+    "inde_macroF1": 0.8592,
+    "inde_recall": [
+     0.745,
+     0.958,
+     0.873
+    ]
+   }
+  ],
+  "same_OA_mean": 0.865,
+  "inde_OA_mean": 0.861,
+  "inde_OA_range": [
+   0.861,
+   0.862
+  ],
+  "inde_macroF1_mean": 0.86,
+  "inde_recall_mean": [
+   0.752,
+   0.962,
+   0.864
+  ]
+ },
+ "Transformer": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "same_OA": 0.9166,
+    "inde_OA": 0.8768,
+    "inde_kappa": 0.8152,
+    "inde_macroF1": 0.8755,
+    "inde_recall": [
+     0.844,
+     0.965,
+     0.817
+    ]
+   },
+   {
+    "seed": 1,
+    "same_OA": 0.9007,
+    "inde_OA": 0.8702,
+    "inde_kappa": 0.8054,
+    "inde_macroF1": 0.8687,
+    "inde_recall": [
+     0.897,
+     0.962,
+     0.75
+    ]
+   },
+   {
+    "seed": 2,
+    "same_OA": 0.898,
+    "inde_OA": 0.8834,
+    "inde_kappa": 0.8252,
+    "inde_macroF1": 0.8819,
+    "inde_recall": [
+     0.877,
+     0.965,
+     0.806
+    ]
+   }
+  ],
+  "same_OA_mean": 0.905,
+  "inde_OA_mean": 0.877,
+  "inde_OA_range": [
+   0.87,
+   0.883
+  ],
+  "inde_macroF1_mean": 0.875,
+  "inde_recall_mean": [
+   0.873,
+   0.964,
+   0.791
+  ]
+ },
+ "LTAE": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "same_OA": 0.8954,
+    "inde_OA": 0.8887,
+    "inde_kappa": 0.833,
+    "inde_macroF1": 0.8874,
+    "inde_recall": [
+     0.823,
+     0.965,
+     0.873
+    ]
+   },
+   {
+    "seed": 1,
+    "same_OA": 0.8795,
+    "inde_OA": 0.8874,
+    "inde_kappa": 0.8311,
+    "inde_macroF1": 0.8865,
+    "inde_recall": [
+     0.844,
+     0.958,
+     0.857
+    ]
+   },
+   {
+    "seed": 2,
+    "same_OA": 0.8887,
+    "inde_OA": 0.8808,
+    "inde_kappa": 0.821,
+    "inde_macroF1": 0.8788,
+    "inde_recall": [
+     0.774,
+     0.965,
+     0.897
+    ]
+   }
+  ],
+  "same_OA_mean": 0.888,
+  "inde_OA_mean": 0.886,
+  "inde_OA_range": [
+   0.881,
+   0.889
+  ],
+  "inde_macroF1_mean": 0.884,
+  "inde_recall_mean": [
+   0.814,
+   0.963,
+   0.876
+  ]
+ },
+ "optical_month_masking": {
+  "note": "masked optical channels set to 0 = training-fold mean after standardisation; random months per sample, seed 0; SAME fold models as the seed-0 benchmark",
+  "results": {
+   "Transformer": {
+    "0.0": {
+     "OA": 0.877,
+     "recall": [
+      0.844,
+      0.965,
+      0.817
+     ]
+    },
+    "0.25": {
+     "OA": 0.865,
+     "recall": [
+      0.848,
+      0.962,
+      0.782
+     ]
+    },
+    "0.5": {
+     "OA": 0.84,
+     "recall": [
+      0.823,
+      0.962,
+      0.73
+     ]
+    },
+    "0.75": {
+     "OA": 0.805,
+     "recall": [
+      0.794,
+      0.969,
+      0.647
+     ]
+    },
+    "1.0": {
+     "OA": 0.715,
+     "recall": [
+      0.819,
+      0.954,
+      0.369
+     ]
+    }
+   },
+   "LTAE": {
+    "0.0": {
+     "OA": 0.889,
+     "recall": [
+      0.823,
+      0.965,
+      0.873
+     ]
+    },
+    "0.25": {
+     "OA": 0.879,
+     "recall": [
+      0.852,
+      0.973,
+      0.81
+     ]
+    },
+    "0.5": {
+     "OA": 0.836,
+     "recall": [
+      0.831,
+      0.969,
+      0.702
+     ]
+    },
+    "0.75": {
+     "OA": 0.807,
+     "recall": [
+      0.893,
+      0.969,
+      0.556
+     ]
+    },
+    "1.0": {
+     "OA": 0.648,
+     "recall": [
+      0.975,
+      0.965,
+      0.004
+     ]
+    }
+   }
+  }
+ },
+ "temporal_length_sameWindow_Transformer": {
+  "3": 0.865,
+  "6": 0.889,
+  "9": 0.897,
+  "12": 0.917
+ }
+}

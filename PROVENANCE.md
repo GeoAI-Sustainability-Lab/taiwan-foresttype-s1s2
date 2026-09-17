@@ -53,3 +53,21 @@ OA 0.8689   kappa 0.8031   misclassified 99   Bl<->Ba 51+26 = 77
 8. "only texture reduced total confusion" -> the fusion network reached 67 (< 68) but by trading
    bamboo recall (0.78) for broadleaf (0.88); texture is the only one that does NOT trade recall.
 9. optical-dropout baseline 0.883 is the Transformer on raw monthly sequences, not the RF (0.869).
+
+
+## Revision R1 (2026-09-18) — 34-feature canonical run
+
+The canonical run of the revised manuscript is `src/revision_R1/canonical_v3.py` (results in
+`results/R1/canonical_v3.json`, per-point predictions in `preds_v3.npz`); `src/train_eval.py`
+reproduces its Table 1 exactly. Protocol unchanged (GroupKFold(5) on the graticule cell `blk`,
+RF 300 trees / leaf 3 / balanced / seed 0); features 34 (radar vegetation index withdrawn,
+aspect cosine as cos(aspect in radians)). Section 0 of `canonical_v3.py` reproduces the
+submitted-version numbers (0.8848 same window, 0.8689 independent) from
+`data/archive_v1_submission/` before the 34-feature run.
+
+Canonical confusion matrix (independent year, RF, 34 features): rows = reference broadleaf,
+conifer, bamboo: `[[187, 4, 52], [0, 249, 11], [26, 7, 219]]`; OA 0.8675, kappa 0.8011,
+macro-F1 0.866, misclassified 100, broadleaf<->bamboo 52 + 26 = 78.
+
+Every other number of the revised manuscript comes from the scripts listed in README
+(`src/revision_R1/`), whose outputs are stored as run in `results/R1/`.

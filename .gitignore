@@ -2,7 +2,4 @@ __pycache__/
 *.pyc
 .DS_Store
 *.gpkg-journal
-上傳步驟.md
-
-# scratch file left by a tooling probe; delete it if you can
-data/_probe
+predictions.csv

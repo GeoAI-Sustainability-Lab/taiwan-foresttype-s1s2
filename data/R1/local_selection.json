@@ -1,0 +1,1 @@
+{"local": ["elev", "slope", "aspect_cos", "temp_mean", "precip_mm", "reNDVI_mean", "reNDVI_pha", "NDMI_mean", "NDMI_pha", "NDVI_amp", "NBR_pha", "VH_mean", "VH_pha", "VH_amp"]}

@@ -1,0 +1,415 @@
+{
+ "S4_nested_34": {
+  "nested top 20": {
+   "cvOA": 0.887,
+   "inOA": 0.877,
+   "inK": 0.815,
+   "selected_in_all_folds": [
+    "elev",
+    "dewp_mean",
+    "precip_wet",
+    "NDMI_mean",
+    "precip_mm",
+    "temp_mean",
+    "NDMI_pha",
+    "precip_dry"
+   ],
+   "n_stable": 8
+  },
+  "nested top 15": {
+   "cvOA": 0.874,
+   "inOA": 0.858,
+   "inK": 0.787,
+   "selected_in_all_folds": [
+    "elev",
+    "dewp_mean",
+    "precip_wet",
+    "NDMI_mean",
+    "precip_mm",
+    "temp_mean",
+    "NDMI_pha"
+   ],
+   "n_stable": 7
+  },
+  "Full (34)": {
+   "cvOA": 0.889,
+   "inOA": 0.868,
+   "n": 34
+  },
+  "VIF-decorrelated (26)": {
+   "cvOA": 0.877,
+   "inOA": 0.86,
+   "n": 26
+  },
+  "Locally selected (14)": {
+   "cvOA": 0.875,
+   "inOA": 0.86,
+   "n": 14
+  }
+ },
+ "vif_kept_34": [
+  "NBR_pha",
+  "NDMI_amp",
+  "NDMI_mean",
+  "NDMI_pha",
+  "NDVI_amp",
+  "NDVI_mean",
+  "NDVI_pha",
+  "RATIO_mean",
+  "RATIO_std",
+  "RATIO_wetdry",
+  "VH_amp",
+  "VH_mean",
+  "VH_pha",
+  "VH_wetdry",
+  "VV_mean",
+  "VV_wetdry",
+  "aspect_cos",
+  "dewdep",
+  "dewp_mean",
+  "precip_dry",
+  "precip_wet",
+  "reNDVI_amp",
+  "reNDVI_pha",
+  "slope",
+  "soilm_wet",
+  "soilm_wetdry"
+ ],
+ "vif_dropped_34": [
+  [
+   "soilm_dry",
+   27329925919617.2
+  ],
+  [
+   "temp_mean",
+   27225472531981.8
+  ],
+  [
+   "precip_mm",
+   38796199013703.6
+  ],
+  [
+   "soilm_mean",
+   7789463991972.7
+  ],
+  [
+   "NBR_mean",
+   63.6
+  ],
+  [
+   "NBR_amp",
+   29.4
+  ],
+  [
+   "reNDVI_mean",
+   19.0
+  ],
+  [
+   "elev",
+   11.9
+  ]
+ ],
+ "shap_34": {
+  "global_top14": [
+   [
+    "elev",
+    0.0937
+   ],
+   [
+    "temp_mean",
+    0.0633
+   ],
+   [
+    "dewp_mean",
+    0.0507
+   ],
+   [
+    "NDVI_mean",
+    0.0352
+   ],
+   [
+    "reNDVI_mean",
+    0.0248
+   ],
+   [
+    "precip_dry",
+    0.0244
+   ],
+   [
+    "NBR_mean",
+    0.0237
+   ],
+   [
+    "precip_wet",
+    0.0192
+   ],
+   [
+    "precip_mm",
+    0.0176
+   ],
+   [
+    "soilm_wetdry",
+    0.0159
+   ],
+   [
+    "NDMI_mean",
+    0.0154
+   ],
+   [
+    "dewdep",
+    0.0142
+   ],
+   [
+    "soilm_dry",
+    0.0076
+   ],
+   [
+    "NDMI_pha",
+    0.0072
+   ]
+  ],
+  "class_top5": {
+   "Broadleaf": [
+    "NDVI_mean",
+    "elev",
+    "temp_mean",
+    "dewp_mean",
+    "NBR_mean"
+   ],
+   "Conifer": [
+    "elev",
+    "temp_mean",
+    "dewp_mean",
+    "precip_dry",
+    "precip_mm"
+   ],
+   "Bamboo": [
+    "elev",
+    "temp_mean",
+    "NDVI_mean",
+    "dewp_mean",
+    "reNDVI_mean"
+   ]
+  },
+  "class_top3_direction": {
+   "Broadleaf": [
+    [
+     "NDVI_mean",
+     "-"
+    ],
+    [
+     "elev",
+     "-"
+    ],
+    [
+     "temp_mean",
+     "+"
+    ]
+   ],
+   "Conifer": [
+    [
+     "elev",
+     "+"
+    ],
+    [
+     "temp_mean",
+     "-"
+    ],
+    [
+     "dewp_mean",
+     "-"
+    ]
+   ],
+   "Bamboo": [
+    [
+     "elev",
+     "-"
+    ],
+    [
+     "temp_mean",
+     "+"
+    ],
+    [
+     "NDVI_mean",
+     "+"
+    ]
+   ]
+  },
+  "BlBa_top10": [
+   [
+    "NDVI_mean",
+    0.1233
+   ],
+   [
+    "reNDVI_mean",
+    0.0877
+   ],
+   [
+    "NBR_mean",
+    0.0758
+   ],
+   [
+    "dewp_mean",
+    0.0654
+   ],
+   [
+    "precip_wet",
+    0.0626
+   ],
+   [
+    "temp_mean",
+    0.0601
+   ],
+   [
+    "precip_dry",
+    0.045
+   ],
+   [
+    "NDMI_mean",
+    0.0445
+   ],
+   [
+    "elev",
+    0.0412
+   ],
+   [
+    "soilm_wetdry",
+    0.0342
+   ]
+  ]
+ },
+ "shap_45": {
+  "global_top10": [
+   [
+    "elev",
+    0.0871
+   ],
+   [
+    "dewp_mean",
+    0.0543
+   ],
+   [
+    "temp_mean",
+    0.0535
+   ],
+   [
+    "NDVI_mean",
+    0.0288
+   ],
+   [
+    "precip_dry",
+    0.0231
+   ],
+   [
+    "reNDVI_mean",
+    0.0217
+   ],
+   [
+    "dewdep",
+    0.0195
+   ],
+   [
+    "precip_wet",
+    0.0194
+   ],
+   [
+    "soilm_wetdry",
+    0.0156
+   ],
+   [
+    "NBR_mean",
+    0.0144
+   ]
+  ],
+  "texture_ranks_global": {
+   "NDRE_fstd1": 17,
+   "NDRE_fstd2": 25,
+   "NDRE_fstd4": 38,
+   "NDVI_fstd2": 14,
+   "NDVI_fstd4": 31,
+   "glcm2_contrast": 27,
+   "glcm2_ent": 13,
+   "glcm2_idm": 16,
+   "glcm2_var": 22,
+   "glcm4_contrast": 43,
+   "glcm4_ent": 32
+  },
+  "BlBa_top15": [
+   [
+    "NDVI_mean",
+    0.0986
+   ],
+   [
+    "reNDVI_mean",
+    0.0754
+   ],
+   [
+    "precip_wet",
+    0.0651
+   ],
+   [
+    "dewp_mean",
+    0.0603
+   ],
+   [
+    "NBR_mean",
+    0.0459
+   ],
+   [
+    "temp_mean",
+    0.0436
+   ],
+   [
+    "elev",
+    0.0381
+   ],
+   [
+    "precip_dry",
+    0.0375
+   ],
+   [
+    "soilm_wetdry",
+    0.0355
+   ],
+   [
+    "glcm2_ent",
+    0.0347
+   ],
+   [
+    "NDMI_mean",
+    0.033
+   ],
+   [
+    "NDVI_fstd2",
+    0.0308
+   ],
+   [
+    "glcm2_idm",
+    0.0249
+   ],
+   [
+    "dewdep",
+    0.0238
+   ],
+   [
+    "precip_mm",
+    0.0219
+   ]
+  ],
+  "texture_ranks_BlBa": {
+   "NDRE_fstd1": 16,
+   "NDRE_fstd2": 23,
+   "NDRE_fstd4": 39,
+   "NDVI_fstd2": 12,
+   "NDVI_fstd4": 30,
+   "glcm2_contrast": 24,
+   "glcm2_ent": 10,
+   "glcm2_idm": 13,
+   "glcm2_var": 20,
+   "glcm4_contrast": 42,
+   "glcm4_ent": 31
+  },
+  "texture_attribution_share_global": 0.113,
+  "texture_attribution_share_BlBa": 0.185
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "random": {
+  "Y": 18,
+  "N": 6,
+  "U": 6,
+  "rate": 0.75,
+  "wilson": [
+   0.551,
+   0.88
+  ]
+ },
+ "random_Broadleaf": {
+  "Y": 6,
+  "N": 3,
+  "U": 1,
+  "rate": 0.667,
+  "wilson": [
+   0.354,
+   0.879
+  ]
+ },
+ "random_Conifer": {
+  "Y": 5,
+  "N": 1,
+  "U": 2,
+  "rate": 0.833,
+  "wilson": [
+   0.436,
+   0.97
+  ]
+ },
+ "random_Bamboo": {
+  "Y": 7,
+  "N": 2,
+  "U": 3,
+  "rate": 0.778,
+  "wilson": [
+   0.453,
+   0.937
+  ]
+ },
+ "flagged": {
+  "Y": 11,
+  "N": 6,
+  "U": 3,
+  "rate": 0.647,
+  "wilson": [
+   0.413,
+   0.827
+  ]
+ },
+ "flagged_Broadleaf": {
+  "Y": 0,
+  "N": 1,
+  "U": 0,
+  "rate": 0.0,
+  "wilson": [
+   0.0,
+   0.793
+  ]
+ },
+ "flagged_Conifer": {
+  "Y": 4,
+  "N": 1,
+  "U": 1,
+  "rate": 0.8,
+  "wilson": [
+   0.376,
+   0.964
+  ]
+ },
+ "flagged_Bamboo": {
+  "Y": 7,
+  "N": 4,
+  "U": 2,
+  "rate": 0.636,
+  "wilson": [
+   0.354,
+   0.848
+  ]
+ },
+ "design_weighted": {
+  "rate": 0.757,
+  "SE": 0.083
+ },
+ "edge_within_30m": {
+  "recorded": 34,
+  "Y": 22
+ },
+ "imagery_2024_or_later": 44,
+ "random_strict_2024plus": {
+  "Y": 17,
+  "n": 22
+ }
+}

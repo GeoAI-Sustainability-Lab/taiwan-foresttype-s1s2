@@ -11,9 +11,9 @@ carry the same attributions forward.
 
 ### Forest-type reference labels
 
-Applies to the `cls` column of `features_5yr.csv`, `features_train4yr.csv` and
-`features_test1yr_2025-2026.csv`, to `train_points.csv` (point coordinates and class), and to
-the `官方林型` column of `misclassified_points.csv`.
+Applies to the `cls` column of `features_train4yr.csv`, `features_test1yr_2025-2026.csv`, `folds.csv`
+and the tables under `data/R1/` and `data/archive_v1_submission/`, and to `train_points.csv`
+(point coordinates and class).
 
 **第四次森林資源調查全島森林林型分布圖** (Fourth National Forest Resource Inventory, island-wide
 forest-type distribution map), 農業部林業及自然保育署 / Forestry and Nature Conservation Agency,

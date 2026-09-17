@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- `figures/fig1_study_area.png` and `figures/fig9_canopy_chips.png` redrawn with layout changes only
+  (legend removed from the map and its frame widened; small gaps between the canopy chips). No change to data, code or results.
+
 ## v1.1.1 — 2026-09-18
 
 - Documentation and metadata revised; analysis folders renamed to `src/analyses/`, `results/analyses/`,

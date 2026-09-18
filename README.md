@@ -56,6 +56,7 @@ agreement with the 2008–2014 inventory labels at the reference points.
 | `canonical_v3_C_vif.py` | collinearity screen nested within the folds: exact linear combinations removed first, then iterative VIF = 1/(1 − R²) until all below 10; RF scored on the held-out blocks | `canonical_v3_C_vif.json` |
 | `models_perclass_f1.py` | per-class F1 of every configuration of the model comparison from the frozen predictions (`preds_v3.npz`, `preds_v3_D.npz`, `preds_v2_deep.npz`) | `canonical_v3_models_f1.json` |
 | `prior_sensitivity.py` | effect of the island-map class priors (0.800 / 0.153 / 0.047) on the out-of-fold next-year predictions of the reference RF at the 755 reference points; a sensitivity of the prior at the balanced sample, not the accuracy of the island map | `prior_sensitivity.json` |
+| `table4_niche.py` | class means of elevation, mean annual temperature and slope and the circular mean of the NDMI first-harmonic phase at the 755 reference points, with the dominant SHAP features per class | `table4_niche.json` |
 | `canonical_v3_D.py` | broadleaf–bamboo enhancement strategies (texture, spring red-edge, hierarchical model, oracle gating, DINOv2 embeddings, multi-year biennial descriptors, fusion network), Presto heads | `canonical_v3_D.json`, `preds_v3_D.npz` |
 | `rerun_deep_aligned.py`, `canonical_v2_D1.py`, `canonical_v2_D2.py` | TempCNN, BiLSTM, Transformer and LTAE on calendar-aligned monthly sequences with fold-internal standardisation and three seeds, optical-month masking, sequence length, Transformer label efficiency (require PyTorch) | `rev_deep_aligned*.json`, `preds_v2_deep.npz`, `canonical_v2_D1.json`, `canonical_v2_D2.json` |
 | `canonical_v2_E_periodicity.py` | period-two test of the 2005–2020 annual Landsat NDVI series against an AR(1) null | `canonical_v2_E_periodicity.json` |
@@ -96,8 +97,8 @@ an area estimate, and the bamboo it maps should be treated as candidate location
 
 ## Versions
 
-`v1.1.2` is the current 34-feature release described here (it adds the nested collinearity screen, the per-class F1 of the
-model comparison, the prior sensitivity and the redrawn figures to `v1.1.1`, a documentation and metadata revision of `v1.1.0`). `v1.0.0` is the earlier 35-feature release; its
+`v1.1.3` is the current 34-feature release described here (`v1.1.2` added the nested collinearity screen, the per-class F1 of the
+model comparison, the prior sensitivity and the redrawn figures to `v1.1.1`, a documentation and metadata revision of `v1.1.0`; `v1.1.3` adds the environmental-niche statistics and refreshes three figures). `v1.0.0` is the earlier 35-feature release; its
 tables are kept under `data/archive_v1_35features/` and section 0 of `src/analyses/canonical_v3.py`
 reproduces its numbers. See `CHANGELOG.md`.
 

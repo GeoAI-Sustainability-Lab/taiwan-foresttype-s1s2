@@ -1,0 +1,72 @@
+{
+ "n": 755,
+ "source": "features_train4yr_v2.csv (755 reference points, 2021-2024 window)",
+ "classes": {
+  "Broadleaf": {
+   "n": 243,
+   "elev_mean": 250.0,
+   "temp_mean": 22.2,
+   "slope_mean": 14.1,
+   "NDMI_pha_circmean": -3.12,
+   "NDMI_pha_arithmetic_mean": -0.32,
+   "shap_top3_direction": [
+    [
+     "NDVI_mean",
+     "-"
+    ],
+    [
+     "elev",
+     "-"
+    ],
+    [
+     "temp_mean",
+     "+"
+    ]
+   ]
+  },
+  "Conifer": {
+   "n": 260,
+   "elev_mean": 2553.0,
+   "temp_mean": 14.6,
+   "slope_mean": 30.9,
+   "NDMI_pha_circmean": 2.46,
+   "NDMI_pha_arithmetic_mean": 0.97,
+   "shap_top3_direction": [
+    [
+     "elev",
+     "+"
+    ],
+    [
+     "temp_mean",
+     "-"
+    ],
+    [
+     "dewp_mean",
+     "-"
+    ]
+   ]
+  },
+  "Bamboo": {
+   "n": 252,
+   "elev_mean": 390.0,
+   "temp_mean": 20.9,
+   "slope_mean": 17.3,
+   "NDMI_pha_circmean": -2.8,
+   "NDMI_pha_arithmetic_mean": -1.01,
+   "shap_top3_direction": [
+    [
+     "elev",
+     "-"
+    ],
+    [
+     "temp_mean",
+     "+"
+    ],
+    [
+     "NDVI_mean",
+     "+"
+    ]
+   ]
+  }
+ }
+}

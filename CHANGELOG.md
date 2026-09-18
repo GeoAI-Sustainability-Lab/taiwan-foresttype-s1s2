@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.3 — 2026-09-19
+
+- New `src/analyses/table4_niche.py` and `results/analyses/table4_niche.json`: class means of the environmental niche variables
+  at the 755 reference points (2021–2024 features), with the NDMI first-harmonic phase as a circular mean (the phase wraps at ±π).
+- Figures refreshed: `fig5_model_benchmark.png` (intervals of the sequence models now belong to the three-seed mean, as the bars do),
+  `fig8_confusion.png` (panel c shows the mean independent-year NDMI curves of the 52 broadleaf points misclassified as bamboo and of the
+  26 bamboo points misclassified as broadleaf, instead of two selected points), `fig2_cloud_availability.png` (panel b labelled as nominal
+  acquisition frequency). No change to the data, the models or the accuracies.
+
 ## v1.1.2 — 2026-09-18
 
 - Collinearity screen corrected. `canonical_v3_C.py` used the diagonal of the pseudo-inverse of the correlation matrix as the

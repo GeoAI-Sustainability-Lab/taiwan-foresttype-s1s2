@@ -2,8 +2,17 @@
 
 ## Unreleased
 
+- Collinearity screen corrected. `canonical_v3_C.py` used the diagonal of the pseudo-inverse of the correlation matrix as the
+  VIF and ran the screen once on all points, so two exactly dependent SAR triples (RATIO_mean = VH_mean − VV_mean,
+  RATIO_wetdry = VH_wetdry − VV_wetdry) survived it. New `src/analyses/canonical_v3_C_vif.py` removes the exact linear
+  combinations first, computes VIF = 1/(1 − R²) and runs the screen on the training blocks of each fold; 22 features are kept
+  in every fold, out-of-fold OA 0.872, next-year OA 0.857 (`results/analyses/canonical_v3_C_vif.json`). The VIF entry of
+  `canonical_v3_C.json` is superseded. No other result changes.
+- New `src/analyses/models_perclass_f1.py` and `results/analyses/canonical_v3_models_f1.json`: per-class F1 of every
+  configuration of the model comparison, from the frozen predictions; `preds_v3_D.npz` and `preds_v2_deep.npz` added to
+  `results/analyses/`.
 - `figures/fig1_study_area.png` and `figures/fig9_canopy_chips.png` redrawn with layout changes only
-  (legend removed from the map and its frame widened; small gaps between the canopy chips). No change to data, code or results.
+  (legend removed from the map and its frame widened; small gaps between the canopy chips).
 
 ## v1.1.1 — 2026-09-18
 

@@ -52,9 +52,11 @@ agreement with the 2008–2014 inventory labels at the reference points.
 |---|---|---|
 | `canonical_v3.py` | accuracy of every feature set with block-bootstrap intervals, texture gain with exact McNemar test and paired interval, entropy-based uncertainty and selective accuracy, two-class (broadleaf/conifer) model, XGBoost | `canonical_v3.json`, `preds_v3.npz` |
 | `canonical_v3_B.py` | label-efficiency curve under the block protocol, sample-size curve, label-noise sensitivity over ten seeds | `canonical_v3_B.json` |
-| `canonical_v3_C.py` | feature selection nested within the folds, SHAP rankings with and without texture | `canonical_v3_C.json` |
+| `canonical_v3_C.py` | feature selection (top-k by permutation importance) nested within the folds, SHAP rankings with and without texture. Its VIF block is superseded by `canonical_v3_C_vif.py` | `canonical_v3_C.json` |
+| `canonical_v3_C_vif.py` | collinearity screen nested within the folds: exact linear combinations removed first, then iterative VIF = 1/(1 − R²) until all below 10; RF scored on the held-out blocks | `canonical_v3_C_vif.json` |
+| `models_perclass_f1.py` | per-class F1 of every configuration of the model comparison from the frozen predictions (`preds_v3.npz`, `preds_v3_D.npz`, `preds_v2_deep.npz`) | `canonical_v3_models_f1.json` |
 | `canonical_v3_D.py` | broadleaf–bamboo enhancement strategies (texture, spring red-edge, hierarchical model, oracle gating, DINOv2 embeddings, multi-year biennial descriptors, fusion network), Presto heads | `canonical_v3_D.json`, `preds_v3_D.npz` |
-| `rerun_deep_aligned.py`, `canonical_v2_D1.py`, `canonical_v2_D2.py` | TempCNN, BiLSTM, Transformer and LTAE on calendar-aligned monthly sequences with fold-internal standardisation and three seeds, optical-month masking, sequence length, Transformer label efficiency (require PyTorch) | `rev_deep_aligned*.json`, `canonical_v2_D1.json`, `canonical_v2_D2.json` |
+| `rerun_deep_aligned.py`, `canonical_v2_D1.py`, `canonical_v2_D2.py` | TempCNN, BiLSTM, Transformer and LTAE on calendar-aligned monthly sequences with fold-internal standardisation and three seeds, optical-month masking, sequence length, Transformer label efficiency (require PyTorch) | `rev_deep_aligned*.json`, `preds_v2_deep.npz`, `canonical_v2_D1.json`, `canonical_v2_D2.json` |
 | `canonical_v2_E_periodicity.py` | period-two test of the 2005–2020 annual Landsat NDVI series against an AR(1) null | `canonical_v2_E_periodicity.json` |
 | `visual_check_estimate.py` | agreement of 50 existing reference points with recent high-resolution imagery, with Wilson intervals and a design-weighted estimate | `visual_check_estimates.json` |
 

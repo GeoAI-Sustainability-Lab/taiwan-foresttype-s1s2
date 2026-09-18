@@ -32,7 +32,8 @@ for K in (20,15):
     S4["nested top %d"%K]=dict(cvOA=round(accuracy_score(y,p1),3),inOA=round(accuracy_score(y,p2),3),inK=round(cohen_kappa_score(y,p2),3),
         selected_in_all_folds=[c for c,v in freq.items() if v==5],n_stable=int((freq==5).sum()))
     print("  nested top%d  cv %.3f  ind %.3f  stable %d"%(K,S4["nested top %d"%K]["cvOA"],S4["nested top %d"%K]["inOA"],S4["nested top %d"%K]["n_stable"]),flush=True)
-# VIF (unsupervised) with 34
+# VIF (unsupervised) with 34 — SUPERSEDED: the pseudo-inverse diagonal is not a valid VIF when exact linear dependencies exist,
+# and this block runs once on all points. The nested screen used for the reported results is canonical_v3_C_vif.py; this block is kept for the record.
 def vifs(X):
     Xs=(X-X.mean(0))/(X.std(0)+1e-9); C=np.corrcoef(Xs,rowvar=False); return np.diag(np.linalg.pinv(C))
 cols=list(F34); dropped=[]

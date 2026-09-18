@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code or data, please cite the Zenodo record of this repository."
 title: "taiwan-foresttype-s1s2: broadleaf, conifer and bamboo forest-type classification across Taiwan from Sentinel-1/2, climate and terrain"
-version: 1.1.1
+version: 1.1.2
 date-released: 2026-09-18
 license: MIT
 repository-code: "https://github.com/GeoAI-Sustainability-Lab/taiwan-foresttype-s1s2"

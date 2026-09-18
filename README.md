@@ -91,11 +91,13 @@ the class probabilities by their natural area priors before taking the arg-max. 
 forest mask of its own, so apply the Fourth National Forest Inventory forest mask when reading it,
 otherwise every non-forest pixel defaults to broadleaf. The shares of a prior-weighted map are not
 comparable with balanced-class point accuracies, so the map is a spatially explicit product rather than
-an area estimate, and the mapped bamboo area is a lower bound.
+an area estimate, and the bamboo it maps should be treated as candidate locations for field verification
+(`src/analyses/prior_sensitivity.py` shows what the priors do to the predictions at the reference points).
 
 ## Versions
 
-`v1.1.1` (documentation and metadata revision of `v1.1.0`) is the 34-feature release described here. `v1.0.0` is the earlier 35-feature release; its
+`v1.1.2` is the current 34-feature release described here (it adds the nested collinearity screen, the per-class F1 of the
+model comparison, the prior sensitivity and the redrawn figures to `v1.1.1`, a documentation and metadata revision of `v1.1.0`). `v1.0.0` is the earlier 35-feature release; its
 tables are kept under `data/archive_v1_35features/` and section 0 of `src/analyses/canonical_v3.py`
 reproduces its numbers. See `CHANGELOG.md`.
 

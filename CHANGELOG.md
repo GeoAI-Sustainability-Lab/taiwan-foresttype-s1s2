@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.1.2 — 2026-09-18
 
 - Collinearity screen corrected. `canonical_v3_C.py` used the diagonal of the pseudo-inverse of the correlation matrix as the
   VIF and ran the screen once on all points, so two exactly dependent SAR triples (RATIO_mean = VH_mean − VV_mean,

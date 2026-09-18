@@ -11,6 +11,8 @@
 - New `src/analyses/models_perclass_f1.py` and `results/analyses/canonical_v3_models_f1.json`: per-class F1 of every
   configuration of the model comparison, from the frozen predictions; `preds_v3_D.npz` and `preds_v2_deep.npz` added to
   `results/analyses/`.
+- New `src/analyses/prior_sensitivity.py` and `results/analyses/prior_sensitivity.json`: the island-map class priors applied
+  to the frozen out-of-fold probabilities of the reference RF (bamboo recall at the reference points falls to 0.008, precision 1.000).
 - `figures/fig1_study_area.png` and `figures/fig9_canopy_chips.png` redrawn with layout changes only
   (legend removed from the map and its frame widened; small gaps between the canopy chips).
 

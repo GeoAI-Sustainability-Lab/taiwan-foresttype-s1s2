@@ -1,0 +1,159 @@
+{
+ "protocol": "first-order harmonic fit y(t)=c0+a cos(2 pi t)+b sin(2 pi t), t = decimal years since 2000-01-01, least squares per stand; one representative stand per class, observations 2023-01 to 2024-12; second-order fit given for comparison",
+ "stands": {
+  "S2_NDMI|Broadleaf": {
+   "n": 149,
+   "order1": {
+    "c0": 0.0675,
+    "a": 0.0147,
+    "b": -0.0786,
+    "amplitude": 0.08,
+    "phase_rad": -1.385,
+    "peak_doy": 286,
+    "trough_doy": 103,
+    "range": 0.1599,
+    "R2": 0.468
+   },
+   "order2": {
+    "amplitude_annual": 0.0783,
+    "amplitude_semiannual": 0.0072,
+    "R2": 0.472
+   }
+  },
+  "S2_NDMI|Conifer": {
+   "n": 66,
+   "order1": {
+    "c0": 0.2945,
+    "a": 0.0599,
+    "b": -0.019,
+    "amplitude": 0.0628,
+    "phase_rad": -0.307,
+    "peak_doy": 348,
+    "trough_doy": 166,
+    "range": 0.1256,
+    "R2": 0.379
+   },
+   "order2": {
+    "amplitude_annual": 0.0657,
+    "amplitude_semiannual": 0.0113,
+    "R2": 0.391
+   }
+  },
+  "S2_NDMI|Bamboo": {
+   "n": 120,
+   "order1": {
+    "c0": 0.319,
+    "a": -0.0181,
+    "b": -0.0877,
+    "amplitude": 0.0896,
+    "phase_rad": -1.775,
+    "peak_doy": 263,
+    "trough_doy": 80,
+    "range": 0.1792,
+    "R2": 0.473
+   },
+   "order2": {
+    "amplitude_annual": 0.0858,
+    "amplitude_semiannual": 0.0222,
+    "R2": 0.511
+   }
+  },
+  "chip_marks": {
+   "S2_NDMI|(c)": {
+    "date": "2024-04-04",
+    "doy": 95,
+    "value": -0.0319
+   },
+   "S2_NDMI|(d)": {
+    "date": "2024-08-02",
+    "doy": 215,
+    "value": 0.0942
+   },
+   "S2_NDMI|(e)": {
+    "date": "2024-11-10",
+    "doy": 315,
+    "value": 0.1706
+   },
+   "S1_VH|(c)": {
+    "date": "2024-04-08",
+    "doy": 99,
+    "value": -12.5588
+   },
+   "S1_VH|(d)": {
+    "date": "2024-08-06",
+    "doy": 219,
+    "value": -14.8826
+   },
+   "S1_VH|(e)": {
+    "date": "2024-11-10",
+    "doy": 315,
+    "value": -14.0068
+   }
+  },
+  "S1_VH|Broadleaf": {
+   "n": 60,
+   "order1": {
+    "c0": -15.5428,
+    "a": -1.1176,
+    "b": -0.5839,
+    "amplitude": 1.2609,
+    "phase_rad": -2.66,
+    "peak_doy": 212,
+    "trough_doy": 29,
+    "range": 2.5218,
+    "R2": 0.217
+   },
+   "order2": {
+    "amplitude_annual": 1.2584,
+    "amplitude_semiannual": 0.2925,
+    "R2": 0.229
+   }
+  },
+  "S1_VH|Conifer": {
+   "n": 60,
+   "order1": {
+    "c0": -19.7373,
+    "a": 0.2474,
+    "b": -0.373,
+    "amplitude": 0.4476,
+    "phase_rad": -0.985,
+    "peak_doy": 309,
+    "trough_doy": 126,
+    "range": 0.8953,
+    "R2": 0.015
+   },
+   "order2": {
+    "amplitude_annual": 0.417,
+    "amplitude_semiannual": 0.949,
+    "R2": 0.084
+   }
+  },
+  "S1_VH|Bamboo": {
+   "n": 60,
+   "order1": {
+    "c0": -12.5824,
+    "a": -0.4158,
+    "b": 0.1942,
+    "amplitude": 0.4589,
+    "phase_rad": 2.705,
+    "peak_doy": 158,
+    "trough_doy": 341,
+    "range": 0.9178,
+    "R2": 0.032
+   },
+   "order2": {
+    "amplitude_annual": 0.4413,
+    "amplitude_semiannual": 0.9239,
+    "R2": 0.165
+   }
+  }
+ },
+ "composite_px": [
+  2100,
+  2035
+ ],
+ "panels_px": [
+  2100,
+  786
+ ]
+}

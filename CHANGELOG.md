@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.4 — 2026-09-19
+
+- Fig. 3 of the manuscript redrawn with the first-order harmonic fit that produces the features. The submitted version of panels (a)
+  and (b) had been drawn with a second-order fit (annual plus semi-annual terms), which the caption did not state. New
+  `src/analyses/fig3_phenology_fit.py`, `data/analyses/fig3_ts_points.csv` (Sentinel-2 NDMI and Sentinel-1 ascending VH observations
+  of one representative stand per class, 2023–2024, exported from GEE) and `results/analyses/fig3_fit.json` (coefficients, amplitude,
+  phase, peak day of year and R² of the fits of both orders); `figures/fig3_phenology.png` regenerated from them, with the chips
+  (c) to (e) unchanged (`figures/fig3_chips.png`). No change to the data tables, the models or the accuracies.
+
 ## v1.1.3 — 2026-09-19
 
 - New `src/analyses/table4_niche.py` and `results/analyses/table4_niche.json`: class means of the environmental niche variables
